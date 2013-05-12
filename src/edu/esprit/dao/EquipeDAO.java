@@ -97,6 +97,23 @@ public class EquipeDAO {
         }
         return equipe;
     }
+    public Equipe readEquipeNom(String nom) {
+        Equipe equipe = new Equipe();
+        try {
+            PreparedStatement stm = con.prepareStatement("SELECT * FROM equipe WHERE nom=?");
+            stm.setString(1, nom);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                equipe.setId(rs.getInt(1));
+                equipe.setNom(rs.getString(2));
+                equipe.setEntraineur(rs.getString(3));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return equipe;
+    }
     
     public boolean deleteEquipe(Equipe equipe) {
         boolean test = false;
