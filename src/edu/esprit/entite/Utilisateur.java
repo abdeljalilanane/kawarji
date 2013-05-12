@@ -29,14 +29,17 @@ public class Utilisateur {
         this.tel = tel;
     }
 
-    public Utilisateur( String Nom, String Prenom, String Role, String UserName, String Password) {
-        
+    public Utilisateur(String Nom, String Prenom, String Role, String UserName, String Password, String mail, String tel) {
         this.Nom = Nom;
         this.Prenom = Prenom;
         this.Role = Role;
         this.UserName = UserName;
         this.Password = Password;
+        this.mail = mail;
+        this.tel = tel;
     }
+
+    
 
     public Utilisateur(int id) {
         this.id = id;
