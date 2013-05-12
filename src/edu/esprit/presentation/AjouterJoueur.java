@@ -8,7 +8,9 @@ import edu.esprit.dao.JoueurDAO;
 import edu.esprit.dao.EquipeDAO;
 import edu.esprit.entite.Joueur;
 import edu.esprit.entite.Equipe;
+import java.io.File;
 import java.util.ArrayList;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +21,9 @@ public class AjouterJoueur extends javax.swing.JFrame {
 
     EquipeDAO equipeDAO = new EquipeDAO();
     ArrayList<Equipe> equipes = equipeDAO.readAllEquipes();
+    JFileChooser fc;
+    static private final String newline = "\n";
+
     /**
      * Creates new form AjouterJoueur
      */
@@ -49,6 +54,7 @@ public class AjouterJoueur extends javax.swing.JFrame {
         Saison_filed = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        img = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -93,6 +99,13 @@ public class AjouterJoueur extends javax.swing.JFrame {
 
         jLabel7.setText("image : ");
 
+        img.setText("Choisir");
+        img.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imgActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,7 +132,9 @@ public class AjouterJoueur extends javax.swing.JFrame {
                             .addComponent(prenom_Field)
                             .addComponent(Num_box, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Equipe_box, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Saison_filed, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(img, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Saison_filed, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)))))
                 .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -148,8 +163,10 @@ public class AjouterJoueur extends javax.swing.JFrame {
                     .addComponent(Saison_filed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(img))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(valider_button))
@@ -186,6 +203,27 @@ public class AjouterJoueur extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
         }
     }//GEN-LAST:event_valider_buttonActionPerformed
+
+    private void imgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imgActionPerformed
+        
+        
+                if (evt.getSource() == img) {
+            int returnVal = fc.showOpenDialog(AjouterJoueur.this);
+ 
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
+                File file = fc.getSelectedFile();
+                //This is where a real application would open the file.
+                //log.append("Opening: " + file.getName() + "." + newline);
+            } else {
+                //log.append("Open command cancelled by user." + newline);
+            }
+            //log.setCaretPosition(log.getDocument().getLength());
+ 
+        //Handle save button action.
+        }
+        
+        
+    }//GEN-LAST:event_imgActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,6 +263,7 @@ public class AjouterJoueur extends javax.swing.JFrame {
     private javax.swing.JComboBox Equipe_box;
     private javax.swing.JComboBox Num_box;
     private javax.swing.JTextField Saison_filed;
+    private javax.swing.JButton img;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
