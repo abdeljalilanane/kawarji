@@ -48,6 +48,7 @@ public class AjouterJoueur extends javax.swing.JFrame {
         Num_box = new javax.swing.JComboBox();
         Saison_filed = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -56,7 +57,7 @@ public class AjouterJoueur extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Ajouter un employé :");
+        jLabel1.setText("Ajouter un joueur :");
 
         jLabel2.setText("Nom:");
 
@@ -90,6 +91,8 @@ public class AjouterJoueur extends javax.swing.JFrame {
 
         jLabel6.setText("Saison :");
 
+        jLabel7.setText("image : ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,7 +111,8 @@ public class AjouterJoueur extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jLabel5)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel6))
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(nom_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
@@ -116,7 +120,7 @@ public class AjouterJoueur extends javax.swing.JFrame {
                             .addComponent(Num_box, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Equipe_box, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Saison_filed, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,7 +147,9 @@ public class AjouterJoueur extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Saison_filed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(valider_button))
@@ -226,6 +232,7 @@ public class AjouterJoueur extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField nom_Field;
     private javax.swing.JTextField prenom_Field;
     private javax.swing.JButton valider_button;
