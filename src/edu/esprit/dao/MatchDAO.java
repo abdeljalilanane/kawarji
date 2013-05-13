@@ -25,7 +25,7 @@ public class MatchDAO {
     public int addMatch(Match match) {
         int cle = 0;
         try {
-            PreparedStatement stm = con.prepareStatement("INSERT INTO match (`id_E1`, `R1`, `R2`, `id_E2`) VALUES (?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement stm = con.prepareStatement("INSERT INTO `match` (`id_E1`, `R1`, `R2`, `id_E2`) VALUES (?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
             stm.setInt(1, match.getId_E1());
             stm.setInt(2, match.getR1());
             stm.setInt(3, match.getR2());

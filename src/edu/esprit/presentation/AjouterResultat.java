@@ -81,11 +81,7 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
 
-        Equipe1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectioner Equipe ::." }));
-
         jLabel1.setText("Equipe 1");
-
-        Equipe2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectioner Equipe ::." }));
 
         jLabel2.setText("Equipe 2");
 
