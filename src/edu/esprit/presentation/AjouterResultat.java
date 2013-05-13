@@ -4,9 +4,11 @@
  */
 package edu.esprit.presentation;
 
+import edu.esprit.dao.ButDAO;
 import edu.esprit.dao.EquipeDAO;
 import edu.esprit.dao.JoueurDAO;
 import edu.esprit.dao.MatchDAO;
+import edu.esprit.entite.But;
 import edu.esprit.entite.Equipe;
 import edu.esprit.entite.Joueur;
 import edu.esprit.entite.Match;
@@ -26,6 +28,8 @@ public class AjouterResultat extends javax.swing.JFrame {
      */
     EquipeDAO equipeDAO = new EquipeDAO();
     ArrayList<Equipe> equipes = equipeDAO.readAllEquipes();
+    JoueurDAO joueurDAO = new JoueurDAO();
+    ArrayList<Joueur> joueur = joueurDAO.readAllJoueurs();
     public AjouterResultat() {
         initComponents();
       
@@ -118,6 +122,11 @@ public class AjouterResultat extends javax.swing.JFrame {
 
         jLabel4.setText("Temp but");
 
+        Tem_but.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Tem_butMouseExited(evt);
+            }
+        });
         Tem_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Tem_butActionPerformed(evt);
@@ -126,7 +135,19 @@ public class AjouterResultat extends javax.swing.JFrame {
 
         Jouer_id.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
 
+        Tem_but1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Tem_but1MouseExited(evt);
+            }
+        });
+
         Jouer_id1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
+
+        Tem_but2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Tem_but2MouseExited(evt);
+            }
+        });
 
         Jouer_id2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
 
@@ -311,6 +332,19 @@ public class AjouterResultat extends javax.swing.JFrame {
         for (int i = 0; i < equipes.size(); i++) {
             Equipe1.addItem(equipes.get(i).getNom());
             Equipe2.addItem(equipes.get(i).getNom());
+            
+        }
+        for (int i = 0; i < joueur.size(); i++) {
+            Jouer_id.addItem(joueur.get(i).getNom());
+            Jouer_id1.addItem(joueur.get(i).getNom());
+            Jouer_id2.addItem(joueur.get(i).getNom());
+            Jouer_id3.addItem(joueur.get(i).getNom());
+            Jouer_id4.addItem(joueur.get(i).getNom());
+            Jouer_id5.addItem(joueur.get(i).getNom());
+            Jouer_id6.addItem(joueur.get(i).getNom());
+            Jouer_id7.addItem(joueur.get(i).getNom());
+            Jouer_id8.addItem(joueur.get(i).getNom());
+            Jouer_id9.addItem(joueur.get(i).getNom());
             
         }
         jLabel3.setVisible(false);
@@ -561,7 +595,46 @@ public class AjouterResultat extends javax.swing.JFrame {
         if(employeDAO.addMatch(match) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
         }
+        
+        
+        
+        Joueur joueurs3=joueurDAO.readJoueurNom(Jouer_id2.getSelectedItem().toString());
+        Joueur joueurs4=joueurDAO.readJoueurNom(Jouer_id3.getSelectedItem().toString());
+        Joueur joueurs5=joueurDAO.readJoueurNom(Jouer_id4.getSelectedItem().toString());
+        
+        
+        
     }//GEN-LAST:event_ValiderActionPerformed
+
+    private void Tem_butMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tem_butMouseExited
+        // TODO add your handling code here:
+        Joueur joueurs1=joueurDAO.readJoueurNom(Jouer_id.getSelectedItem().toString());
+        But but=new But(1, joueurs1.getId(), Tem_but.getText());
+        ButDAO butdao=new ButDAO();
+        if(butdao.addBut(but) != 0){
+            JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
+        }
+    }//GEN-LAST:event_Tem_butMouseExited
+
+    private void Tem_but1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tem_but1MouseExited
+        // TODO add your handling code here:
+        Joueur joueurs2=joueurDAO.readJoueurNom(Jouer_id1.getSelectedItem().toString());
+        But but=new But(1, joueurs2.getId(), Tem_but1.getText());
+        ButDAO butdao=new ButDAO();
+        if(butdao.addBut(but) != 0){
+            JOptionPane.showMessageDialog(this, "Ajout effectué avec succès joueur!");
+        }
+    }//GEN-LAST:event_Tem_but1MouseExited
+
+    private void Tem_but2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tem_but2MouseExited
+        // TODO add your handling code here:
+        Joueur joueurs2=joueurDAO.readJoueurNom(Jouer_id2.getSelectedItem().toString());
+        But but=new But(1, joueurs2.getId(), Tem_but2.getText());
+        ButDAO butdao=new ButDAO();
+        if(butdao.addBut(but) != 0){
+            JOptionPane.showMessageDialog(this, "Ajout effectué avec succès joueur!");
+        }
+    }//GEN-LAST:event_Tem_but2MouseExited
 
     /**
      * @param args the command line arguments

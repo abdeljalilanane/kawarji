@@ -280,6 +280,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="Tem_but">
       <Events>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tem_butMouseExited"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tem_butActionPerformed"/>
       </Events>
     </Component>
@@ -293,6 +294,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="Tem_but1">
+      <Events>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tem_but1MouseExited"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="Jouer_id1">
       <Properties>
@@ -304,6 +308,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="Tem_but2">
+      <Events>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tem_but2MouseExited"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="Jouer_id2">
       <Properties>

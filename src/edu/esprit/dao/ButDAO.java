@@ -25,10 +25,10 @@ public class ButDAO {
     public int addBut(But but) {
         int cle = 0;
         try {
-            PreparedStatement stm = con.prepareStatement("INSERT INTO but (id_match, id_joueur,Temps) VALUES (?,?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement stm = con.prepareStatement("INSERT INTO `but` (id_match, id_joueur,Temps) VALUES (?,?,?)", Statement.RETURN_GENERATED_KEYS);
             stm.setInt(1, but.getId_match());
             stm.setInt(2, but.getId_Joueur());
-            stm.setString(2, but.getTemps());
+            stm.setString(3, but.getTemps());
             stm.executeUpdate();
             ResultSet rs = stm.getGeneratedKeys();
             while (rs.next()) {

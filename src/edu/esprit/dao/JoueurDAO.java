@@ -107,6 +107,26 @@ public class JoueurDAO {
         }
         return joueur;
     }
+    public Joueur readJoueurNom(String nom) {
+        Joueur joueur = new Joueur();
+        try {
+            PreparedStatement stm = con.prepareStatement("SELECT * FROM Joueur WHERE nom=?");
+            stm.setString(1, nom);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                joueur.setId(rs.getInt(1));
+                joueur.setId_Equipe(rs.getInt(2));
+                joueur.setNom(rs.getString(3));
+                joueur.setPrenom(rs.getString(4));
+                joueur.setSaison(rs.getString(5));
+                joueur.setNum(rs.getInt(6));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(JoueurDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return joueur;
+    }
     
     public boolean deleteJoueur(Joueur joueur) {
         boolean test = false;
