@@ -85,7 +85,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
 
+        Equipe1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Equipe ::." }));
+
         jLabel1.setText("Equipe 1");
+
+        Equipe2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Equipe ::." }));
 
         jLabel2.setText("Equipe 2");
 
@@ -209,7 +213,7 @@ public class AjouterResultat extends javax.swing.JFrame {
                                 .add(Jouer_id4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .add(52, 52, 52)
                                 .add(Tem_but4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                         .add(jLabel5)
@@ -236,25 +240,25 @@ public class AjouterResultat extends javax.swing.JFrame {
                 .addContainerGap()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(layout.createSequentialGroup()
-                                .add(jLabel1)
-                                .add(18, 18, 18)
-                                .add(Equipe1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(R1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .add(R2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 48, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(Equipe2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(jLabel2))
-                            .add(jSeparator2))
-                        .add(16, 16, 16))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(0, 0, Short.MAX_VALUE)
+                        .add(jLabel1)
+                        .add(18, 18, 18)
+                        .add(Equipe1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(R1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(R2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 48, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(Equipe2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jLabel2))
+                    .add(layout.createSequentialGroup()
+                        .add(33, 33, 33)
+                        .add(jSeparator2))
+                    .add(layout.createSequentialGroup()
+                        .add(340, 340, 340)
                         .add(Valider)
-                        .add(35, 35, 35))))
+                        .add(0, 0, Short.MAX_VALUE)))
+                .add(16, 16, 16))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -267,9 +271,11 @@ public class AjouterResultat extends javax.swing.JFrame {
                     .add(jLabel2)
                     .add(R2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(R1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(Valider)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(54, 54, 54)
+                .add(19, 19, 19)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(layout.createSequentialGroup()
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
@@ -319,9 +325,7 @@ public class AjouterResultat extends javax.swing.JFrame {
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(Tem_but9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(Jouer_id9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .add(47, 47, 47)
-                .add(Valider)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
         pack();
@@ -332,6 +336,8 @@ public class AjouterResultat extends javax.swing.JFrame {
         for (int i = 0; i < equipes.size(); i++) {
             Equipe1.addItem(equipes.get(i).getNom());
             Equipe2.addItem(equipes.get(i).getNom());
+           // Equipe1.set
+            
             
         }
         for (int i = 0; i < joueur.size(); i++) {
@@ -594,6 +600,8 @@ public class AjouterResultat extends javax.swing.JFrame {
         MatchDAO employeDAO = new MatchDAO();
         if(employeDAO.addMatch(match) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
+            R1.setEnabled(false);
+        R2.setEnabled(false);
         }
         
         
@@ -608,32 +616,46 @@ public class AjouterResultat extends javax.swing.JFrame {
 
     private void Tem_butMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tem_butMouseExited
         // TODO add your handling code here:
+        if(Tem_but.getText().equals("")==false)
+        {
+            
+        
         Joueur joueurs1=joueurDAO.readJoueurNom(Jouer_id.getSelectedItem().toString());
         But but=new But(1, joueurs1.getId(), Tem_but.getText());
         ButDAO butdao=new ButDAO();
         if(butdao.addBut(but) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
         }
+        Tem_but.setVisible(false);
+        Jouer_id.setVisible(false);
+        }
     }//GEN-LAST:event_Tem_butMouseExited
 
     private void Tem_but1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tem_but1MouseExited
         // TODO add your handling code here:
-        Joueur joueurs2=joueurDAO.readJoueurNom(Jouer_id1.getSelectedItem().toString());
+        if(Tem_but1.getText().equals("")==false)
+        {Joueur joueurs2=joueurDAO.readJoueurNom(Jouer_id1.getSelectedItem().toString());
         But but=new But(1, joueurs2.getId(), Tem_but1.getText());
         ButDAO butdao=new ButDAO();
         if(butdao.addBut(but) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès joueur!");
         }
+        Tem_but1.setVisible(false);
+        Jouer_id1.setVisible(false);}
     }//GEN-LAST:event_Tem_but1MouseExited
 
     private void Tem_but2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tem_but2MouseExited
         // TODO add your handling code here:
+        if(Tem_but2.getText().equals("")==false)
+        {
         Joueur joueurs2=joueurDAO.readJoueurNom(Jouer_id2.getSelectedItem().toString());
         But but=new But(1, joueurs2.getId(), Tem_but2.getText());
         ButDAO butdao=new ButDAO();
         if(butdao.addBut(but) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès joueur!");
         }
+        Tem_but2.setVisible(false);
+        Jouer_id2.setVisible(false);}
     }//GEN-LAST:event_Tem_but2MouseExited
 
     /**
