@@ -128,4 +128,33 @@ public class UtilisateurDAO {
         }
         return test;
     }
+    
+    
+    
+    //Login
+    public Utilisateur checkUser(String login,String pass) {
+        Utilisateur utilisateur = new Utilisateur();
+        try {
+            PreparedStatement stm = con.prepareStatement("SELECT * FROM user WHERE `password`=? and `username`=? ");
+            stm.setString(1, login);
+            stm.setString(2, pass);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                utilisateur.setId(rs.getInt(1));
+                utilisateur.setNom(rs.getString(2));
+                utilisateur.setPrenom(rs.getString(3));
+                utilisateur.setRole(rs.getString(4));
+                utilisateur.setMail(rs.getString(5));
+                utilisateur.setTel(rs.getString(6));
+                utilisateur.setUserName(rs.getString(7));
+                utilisateur.setPassword(rs.getString(8));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return utilisateur;
+        
+    }
 }
