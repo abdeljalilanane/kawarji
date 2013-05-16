@@ -25,9 +25,10 @@ public class EquipeDAO {
     public int addEquipe(Equipe equipe) {
         int cle = 0;
         try {
-            PreparedStatement stm = con.prepareStatement("INSERT INTO equipe (nom, entraineur) VALUES (?,?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement stm = con.prepareStatement("INSERT INTO equipe (nom, entraineur,flux) VALUES (?,?,?)", Statement.RETURN_GENERATED_KEYS);
             stm.setString(1, equipe.getNom());
             stm.setString(2, equipe.getEntraineur());
+            stm.setString(3, equipe.getFlux());
             
             stm.executeUpdate();
             ResultSet rs = stm.getGeneratedKeys();
@@ -45,10 +46,11 @@ public class EquipeDAO {
     public boolean updateEquipe(Equipe equipe) {
         boolean test = false;
         try {
-            PreparedStatement stm = con.prepareStatement("UPDATE equipe SET nom=?, entraineur=? WHERE id=?");
+            PreparedStatement stm = con.prepareStatement("UPDATE equipe SET nom=?, entraineur=?,flux=? WHERE id=?");
             stm.setString(1, equipe.getNom());
-            stm.setString(2, equipe.getEntraineur());     
-            stm.setInt(3, equipe.getId());
+            stm.setString(2, equipe.getEntraineur());
+            stm.setString(3, equipe.getFlux());
+            stm.setInt(4, equipe.getId());
             if (stm.executeUpdate() != 0) {
                 test = true;
             }
@@ -68,6 +70,7 @@ public class EquipeDAO {
                 equipe.setId(rs.getInt(1));
                 equipe.setNom(rs.getString(2));
                 equipe.setEntraineur(rs.getString(3));
+                equipe.setFlux(rs.getString(4));
                 
                 
                 
@@ -90,6 +93,7 @@ public class EquipeDAO {
                 equipe.setId(rs.getInt(1));
                 equipe.setNom(rs.getString(2));
                 equipe.setEntraineur(rs.getString(3));
+                equipe.setFlux(rs.getString(4));
             }
 
         } catch (SQLException ex) {
@@ -107,6 +111,7 @@ public class EquipeDAO {
                 equipe.setId(rs.getInt(1));
                 equipe.setNom(rs.getString(2));
                 equipe.setEntraineur(rs.getString(3));
+                equipe.setFlux(rs.getString(4));
             }
 
         } catch (SQLException ex) {

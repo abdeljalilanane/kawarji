@@ -10,17 +10,27 @@ package edu.esprit.entite;
  */
 public class Equipe {
     private int Id;
-    private String Nom,Entraineur;
+    private String Nom,Entraineur,Flux;
 
-    public Equipe(String Nom, String Entraineur) {
+    public Equipe(String Nom, String Entraineur,String Flux) {
         this.Nom = Nom;
         this.Entraineur = Entraineur;
+        this.Flux=Flux;
     }
 
-    public Equipe(int Id, String Nom, String Entraineur) {
+    public String getFlux() {
+        return Flux;
+    }
+
+    public void setFlux(String Flux) {
+        this.Flux = Flux;
+    }
+
+    public Equipe(int Id, String Nom, String Entraineur,String Flux) {
         this.Id = Id;
         this.Nom = Nom;
         this.Entraineur = Entraineur;
+        this.Flux=Flux;
     }
 
     public Equipe() {

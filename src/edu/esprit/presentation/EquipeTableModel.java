@@ -18,7 +18,7 @@ public class EquipeTableModel extends AbstractTableModel{
     
     ArrayList<Equipe> equipe;
     EquipeDAO eDAO = new EquipeDAO();
-    String[] entetes = {"Id", "Nom", "Entraineur"};
+    String[] entetes = {"Id", "Nom", "Entraineur","Flux"};
 
     public EquipeTableModel() {
         equipe = eDAO.readAllEquipes();
@@ -43,6 +43,8 @@ public class EquipeTableModel extends AbstractTableModel{
                 return equipe.get(rowIndex).getNom();
             case 2:
                 return equipe.get(rowIndex).getEntraineur();
+            case 3:
+                return equipe.get(rowIndex).getFlux();
             default:
                 return null;
         }

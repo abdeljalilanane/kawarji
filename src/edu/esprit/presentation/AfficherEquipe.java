@@ -131,7 +131,8 @@ public class AfficherEquipe extends javax.swing.JFrame {
         int id = Integer.parseInt(ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),0).toString());
         String nom=ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),1).toString();
         String Entrenaire=ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),2).toString();
-        Equipe e=new Equipe(id, nom, Entrenaire);
+        String Flux=ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),3).toString();
+        Equipe e=new Equipe(id, nom, Entrenaire,Flux);
         this.setVisible(false);
         new AjouterEquipe(e).setVisible(true);
     }//GEN-LAST:event_bntModifierActionPerformed
@@ -141,7 +142,8 @@ public class AfficherEquipe extends javax.swing.JFrame {
         int id = Integer.parseInt(ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),0).toString());
         String nom=ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),1).toString();
         String Entrenaire=ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),2).toString();
-        Equipe equipe = new Equipe(id,nom, Entrenaire);
+        String Flux=ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),3).toString();
+        Equipe equipe=new Equipe(id, nom, Entrenaire,Flux);
         EquipeDAO employeDAO = new EquipeDAO();
         
         if(employeDAO.deleteEquipe(equipe)){

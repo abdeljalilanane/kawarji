@@ -46,6 +46,8 @@ static Equipe e=null;
         valider_button = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         btnModifier = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        Flux_text = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -81,6 +83,8 @@ static Equipe e=null;
             }
         });
 
+        jLabel4.setText("Flux :");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,11 +101,13 @@ static Equipe e=null;
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel3)
                                 .addComponent(jLabel2)
-                                .addComponent(jLabel1))
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel4))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(nom_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                                .addComponent(entraineur_Field))))
+                                .addComponent(entraineur_Field)
+                                .addComponent(Flux_text))))
                     .addComponent(jButton2))
                 .addContainerGap(77, Short.MAX_VALUE))
         );
@@ -118,11 +124,15 @@ static Equipe e=null;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(entraineur_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(103, 103, 103)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(Flux_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(valider_button)
                     .addComponent(btnModifier))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addContainerGap())
         );
@@ -153,7 +163,7 @@ static Equipe e=null;
     private void valider_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valider_buttonActionPerformed
         // TODO add your handling code here:
         
-        Equipe equipe = new Equipe(nom_Field.getText(), entraineur_Field.getText());
+        Equipe equipe = new Equipe(nom_Field.getText(), entraineur_Field.getText(),Flux_text.getText());
         EquipeDAO employeDAO = new EquipeDAO();
         if(employeDAO.addEquipe(equipe) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
@@ -162,7 +172,7 @@ static Equipe e=null;
 
     private void btnModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierActionPerformed
         // TODO add your handling code here:
-        Equipe equipe = new Equipe(e.getId(),nom_Field.getText(), entraineur_Field.getText());
+        Equipe equipe = new Equipe(e.getId(),nom_Field.getText(), entraineur_Field.getText(),Flux_text.getText());
         EquipeDAO employeDAO = new EquipeDAO();
         if(employeDAO.updateEquipe(equipe)){
             JOptionPane.showMessageDialog(this, "Modification effectué avec succès !");
@@ -206,12 +216,14 @@ static Equipe e=null;
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Flux_text;
     private javax.swing.JButton btnModifier;
     private javax.swing.JTextField entraineur_Field;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField nom_Field;
     private javax.swing.JButton valider_button;
     // End of variables declaration//GEN-END:variables
