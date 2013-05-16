@@ -16,13 +16,17 @@ import javax.swing.JOptionPane;
  * @author Wael Mallek
  */
 public class AjouterEquipe extends javax.swing.JFrame {
-
+static Equipe e=null;
     
     /**
      * Creates new form AjouterEquipe
      */
     public AjouterEquipe() {
         initComponents();
+    }
+    public AjouterEquipe(Equipe e) {
+        initComponents();
+        this.e=e;
     }
 
     /**
@@ -41,6 +45,7 @@ public class AjouterEquipe extends javax.swing.JFrame {
         entraineur_Field = new javax.swing.JTextField();
         valider_button = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        btnModifier = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -69,6 +74,13 @@ public class AjouterEquipe extends javax.swing.JFrame {
             }
         });
 
+        btnModifier.setText("Modifier");
+        btnModifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifierActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -77,7 +89,10 @@ public class AjouterEquipe extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(valider_button)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnModifier)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(valider_button))
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel3)
@@ -104,7 +119,9 @@ public class AjouterEquipe extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(entraineur_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(103, 103, 103)
-                .addComponent(valider_button)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(valider_button)
+                    .addComponent(btnModifier))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addContainerGap())
@@ -121,7 +138,16 @@ public class AjouterEquipe extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-       
+        if (e!=null) {
+            nom_Field.setText(e.getNom());
+            entraineur_Field.setText(e.getEntraineur());
+            valider_button.setVisible(false);
+            btnModifier.setVisible(true);
+        }else
+        {
+            valider_button.setVisible(true);
+            btnModifier.setVisible(false);
+        }
     }//GEN-LAST:event_formWindowOpened
 
     private void valider_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valider_buttonActionPerformed
@@ -133,6 +159,17 @@ public class AjouterEquipe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
         }
     }//GEN-LAST:event_valider_buttonActionPerformed
+
+    private void btnModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierActionPerformed
+        // TODO add your handling code here:
+        Equipe equipe = new Equipe(e.getId(),nom_Field.getText(), entraineur_Field.getText());
+        EquipeDAO employeDAO = new EquipeDAO();
+        if(employeDAO.updateEquipe(equipe)){
+            JOptionPane.showMessageDialog(this, "Modification effectué avec succès !");
+            this.setVisible(false);
+            new AfficherEquipe().setVisible(true);
+        }
+    }//GEN-LAST:event_btnModifierActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,6 +206,7 @@ public class AjouterEquipe extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnModifier;
     private javax.swing.JTextField entraineur_Field;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

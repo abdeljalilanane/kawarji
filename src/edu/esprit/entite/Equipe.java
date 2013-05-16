@@ -17,6 +17,12 @@ public class Equipe {
         this.Entraineur = Entraineur;
     }
 
+    public Equipe(int Id, String Nom, String Entraineur) {
+        this.Id = Id;
+        this.Nom = Nom;
+        this.Entraineur = Entraineur;
+    }
+
     public Equipe() {
     }
 
