@@ -4,6 +4,8 @@
  */
 package kawarji;
 
+import edu.esprit.dao.UtilisateurDAO;
+import edu.esprit.entite.Utilisateur;
 import java.awt.BorderLayout;
 
 /**
@@ -59,6 +61,11 @@ public class login extends javax.swing.JFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/login.png"))); // NOI18N
         jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2);
         jButton2.setBounds(280, 230, 97, 29);
 
@@ -96,7 +103,6 @@ public class login extends javax.swing.JFrame {
         getContentPane().add(TXT_MotPass);
         TXT_MotPass.setBounds(220, 200, 220, 28);
 
-        fond.setIcon(new javax.swing.ImageIcon("/Users/Jaloul1/Dropbox/Projet c++/java/kawarji/src/image/1192805705_1024x768_football-on-the-grass copie.jpg")); // NOI18N
         fond.setMaximumSize(new java.awt.Dimension(923, 435));
         fond.setMinimumSize(new java.awt.Dimension(923, 435));
         fond.setPreferredSize(new java.awt.Dimension(923, 435));
@@ -113,6 +119,34 @@ public class login extends javax.swing.JFrame {
     private void TXT_MotPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_MotPassActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TXT_MotPassActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // Login 
+        
+       String login = TXT_Login.getText();
+       String pass = TXT_MotPass.getText();
+       
+       
+       Utilisateur u = new Utilisateur();
+       UtilisateurDAO dao = new UtilisateurDAO();
+       u = dao.checkUser(login, pass);
+       System.out.println(u.getRole());
+
+        if (u.getRole() == null) {
+            this.setVisible(false);
+            new SingUp().setVisible(true);
+        } else if (u.getRole() == "admin"){
+            //this.setVisible(false);
+            
+        } else {
+            //this.setVisible(false);
+            
+        }
+            
+        
+       
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
