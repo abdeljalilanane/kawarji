@@ -47,8 +47,8 @@ public class login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         TXT_Login = new javax.swing.JTextField();
-        TXT_MotPass = new javax.swing.JTextField();
         fond = new javax.swing.JLabel();
+        TXT_MotPass = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -96,20 +96,13 @@ public class login extends javax.swing.JFrame {
         getContentPane().add(TXT_Login);
         TXT_Login.setBounds(220, 160, 220, 28);
 
-        TXT_MotPass.setToolTipText("");
-        TXT_MotPass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TXT_MotPassActionPerformed(evt);
-            }
-        });
-        getContentPane().add(TXT_MotPass);
-        TXT_MotPass.setBounds(220, 200, 220, 28);
-
         fond.setMaximumSize(new java.awt.Dimension(923, 435));
         fond.setMinimumSize(new java.awt.Dimension(923, 435));
         fond.setPreferredSize(new java.awt.Dimension(923, 435));
         getContentPane().add(fond);
         fond.setBounds(0, 0, 1020, 435);
+        getContentPane().add(TXT_MotPass);
+        TXT_MotPass.setBounds(220, 200, 220, 28);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -117,10 +110,6 @@ public class login extends javax.swing.JFrame {
     private void TXT_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_LoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TXT_LoginActionPerformed
-
-    private void TXT_MotPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_MotPassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TXT_MotPassActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // Login 
@@ -186,7 +175,7 @@ public class login extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField TXT_Login;
-    private javax.swing.JTextField TXT_MotPass;
+    private javax.swing.JPasswordField TXT_MotPass;
     private javax.swing.JLabel fond;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

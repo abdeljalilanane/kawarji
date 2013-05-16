@@ -51,7 +51,7 @@ public class RSSReader {
                 element = (Element) nodes.item(i);
                 System.out.println("Titre: " + readNode(element, "title"));
                 System.out.println("Lien: " + readNode(element, "link"));
-                news = news+readNode(element, "title")+"\n";
+                news = news+readNode(element, "title")+":\n";
                
             } //for
             //for

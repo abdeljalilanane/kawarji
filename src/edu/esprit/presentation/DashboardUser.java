@@ -5,7 +5,12 @@
 package edu.esprit.presentation;
 
 import api.RSSReader;
+import edu.esprit.dao.EquipeDAO;
+import edu.esprit.dao.FavoritsDAO;
+import edu.esprit.entite.Equipe;
+import edu.esprit.entite.Favorits;
 import edu.esprit.entite.Utilisateur;
+import javax.swing.JEditorPane;
 
 /**
  *
@@ -21,15 +26,22 @@ public class DashboardUser extends javax.swing.JFrame {
         initComponents();
         
         RSSReader reader = new RSSReader();
-        news.setText(reader.parse("http://www.clubafricain.com/rss.asp"));
+        news.setText(reader.parse("http://www.e-s-tunis.com/EST/misc/flux/rss.php"));
     }
     public DashboardUser(Utilisateur u) {
         initComponents();
         this.u = u;
         user.setText(u.getPrenom()+" "+u.getNom());
         
+        Favorits f = new Favorits();
+        Equipe e = new Equipe();
+        FavoritsDAO fv = new FavoritsDAO();
+        f = fv.readFavoritsID(u.getId());
+        EquipeDAO eq = new EquipeDAO();
+        e = eq.readEquipeID(f.getId_equipe());
+        
         RSSReader reader = new RSSReader();
-        news.setText(reader.parse("http://www.clubafricain.com/rss.asp"));
+        news.setText(reader.parse(e.getFlux()));
         //reader.parse1("http://www.clubafricain.com/rss.asp");
         
         
