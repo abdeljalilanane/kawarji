@@ -151,6 +151,7 @@ static Equipe e=null;
         if (e!=null) {
             nom_Field.setText(e.getNom());
             entraineur_Field.setText(e.getEntraineur());
+            Flux_text.setText(e.getFlux());
             valider_button.setVisible(false);
             btnModifier.setVisible(true);
         }else
