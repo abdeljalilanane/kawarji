@@ -4,9 +4,12 @@
  */
 package kawarji;
 
+
 import edu.esprit.dao.UtilisateurDAO;
 import edu.esprit.entite.Utilisateur;
+import edu.esprit.presentation.DashboardUser;
 import java.awt.BorderLayout;
+import kawarji.SingUp;
 
 /**
  *
@@ -49,7 +52,6 @@ public class login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
-        setMaximumSize(new java.awt.Dimension(1021, 436));
         setMinimumSize(new java.awt.Dimension(1021, 436));
         getContentPane().setLayout(null);
 
@@ -139,8 +141,8 @@ public class login extends javax.swing.JFrame {
             //this.setVisible(false);
             
         } else {
-            //this.setVisible(false);
-            
+            this.setVisible(false);
+            new DashboardUser(u).setVisible(true);
         }
             
         

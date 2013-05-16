@@ -4,17 +4,35 @@
  */
 package edu.esprit.presentation;
 
+import api.RSSReader;
+import edu.esprit.entite.Utilisateur;
+
 /**
  *
  * @author slimkhan
  */
 public class DashboardUser extends javax.swing.JFrame {
 
+    static Utilisateur u = null;
     /**
      * Creates new form DashboardUser
      */
     public DashboardUser() {
         initComponents();
+        
+        RSSReader reader = new RSSReader();
+        news.setText(reader.parse("http://www.clubafricain.com/rss.asp"));
+    }
+    public DashboardUser(Utilisateur u) {
+        initComponents();
+        this.u = u;
+        user.setText(u.getPrenom()+" "+u.getNom());
+        
+        RSSReader reader = new RSSReader();
+        news.setText(reader.parse("http://www.clubafricain.com/rss.asp"));
+        //reader.parse1("http://www.clubafricain.com/rss.asp");
+        
+        
     }
 
     /**
@@ -64,7 +82,7 @@ public class DashboardUser extends javax.swing.JFrame {
 
         user.setText("Nom Prenom");
         getContentPane().add(user);
-        user.setBounds(620, 10, 100, 20);
+        user.setBounds(530, 10, 190, 20);
 
         jButton1.setText("Ajouter favories");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
