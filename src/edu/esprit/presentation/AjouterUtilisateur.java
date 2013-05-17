@@ -4,10 +4,10 @@
  */
 package edu.esprit.presentation;
 
+
 import edu.esprit.dao.UtilisateurDAO;
-
 import edu.esprit.entite.Utilisateur;
-
+import static edu.esprit.presentation.AjouterEquipe.e;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author Wael Mallek
  */
 public class AjouterUtilisateur extends javax.swing.JFrame {
-
+ static Utilisateur user=null;
     
     /**
      * Creates new form AjouterUtilisateur
@@ -24,6 +24,14 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
     public AjouterUtilisateur() {
         initComponents();
     }
+
+    AjouterUtilisateur(Utilisateur e) {
+        initComponents();
+        user=e;
+        
+    }
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,6 +59,7 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         Password_Field = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        btnModifier = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -97,6 +106,13 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
 
         jLabel8.setText("Passeword :");
 
+        btnModifier.setText("Modifier");
+        btnModifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifierActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -121,7 +137,10 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
                             .addComponent(login_Field)
                             .addComponent(Tel_Field)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(valider_button)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(btnModifier)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(valider_button))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(nom_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                                     .addComponent(prenom_Field)
@@ -165,7 +184,8 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
-                    .addComponent(valider_button))
+                    .addComponent(valider_button)
+                    .addComponent(btnModifier))
                 .addContainerGap())
         );
 
@@ -180,6 +200,21 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
+        if (user!=null) {
+            
+            nom_Field.setText(user.getNom());
+            prenom_Field.setText(user.getPrenom());
+            Email_Field.setText(user.getMail());
+            Tel_Field.setText(user.getTel());
+            login_Field.setText(user.getUserName());
+            Password_Field.setText(user.getPassword());
+            valider_button.setVisible(false);
+            btnModifier.setVisible(true);
+        }else
+        {
+            valider_button.setVisible(true);
+            btnModifier.setVisible(false);
+        }
        
     }//GEN-LAST:event_formWindowOpened
 
@@ -196,6 +231,17 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
     private void nom_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_FieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nom_FieldActionPerformed
+
+    private void btnModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierActionPerformed
+        // TODO add your handling code here:
+        Utilisateur equipe = new Utilisateur(user.getId(), user.getNom(), user.getPrenom(), Role_Field.getSelectedItem().toString(), user.getMail(), user.getTel(), user.getUserName(), user.getPassword());
+        UtilisateurDAO employeDAO = new UtilisateurDAO();
+        if(employeDAO.updateUtilisateur(equipe)){
+            JOptionPane.showMessageDialog(this, "Modification effectué avec succès !");
+            this.setVisible(false);
+            new AfficherUtilisateur().setVisible(true);
+        }
+    }//GEN-LAST:event_btnModifierActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,6 +282,7 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
     private javax.swing.JTextField Password_Field;
     private javax.swing.JComboBox Role_Field;
     private javax.swing.JTextField Tel_Field;
+    private javax.swing.JButton btnModifier;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

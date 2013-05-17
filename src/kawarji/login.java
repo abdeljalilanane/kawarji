@@ -47,8 +47,8 @@ public class login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         TXT_Login = new javax.swing.JTextField();
-        fond = new javax.swing.JLabel();
         TXT_MotPass = new javax.swing.JPasswordField();
+        fond = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -95,14 +95,15 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(TXT_Login);
         TXT_Login.setBounds(220, 160, 220, 28);
+        getContentPane().add(TXT_MotPass);
+        TXT_MotPass.setBounds(220, 200, 220, 28);
 
+        fond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/1192805705_1024x768_football-on-the-grass copie.jpg"))); // NOI18N
         fond.setMaximumSize(new java.awt.Dimension(923, 435));
         fond.setMinimumSize(new java.awt.Dimension(923, 435));
         fond.setPreferredSize(new java.awt.Dimension(923, 435));
         getContentPane().add(fond);
         fond.setBounds(0, 0, 1020, 435);
-        getContentPane().add(TXT_MotPass);
-        TXT_MotPass.setBounds(220, 200, 220, 28);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

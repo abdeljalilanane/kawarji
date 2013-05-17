@@ -28,6 +28,7 @@ public class Favorits {
     public int getId() {
         return Id;
     }
+    
 
     public void setId(int Id) {
         this.Id = Id;

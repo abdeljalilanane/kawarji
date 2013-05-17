@@ -5,9 +5,10 @@
 package edu.esprit.presentation;
 
 import edu.esprit.dao.FavoritsDAO;
-import edu.esprit.dao.EquipeDAO;
+import edu.esprit.dao.FavoritsDAO;
 import edu.esprit.entite.Favorits;
-import edu.esprit.entite.Equipe;
+import edu.esprit.entite.Favorits;
+import static edu.esprit.presentation.AjouterFavorits.e;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -16,14 +17,18 @@ import javax.swing.JOptionPane;
  * @author Wael Mallek
  */
 public class AjouterFavorits extends javax.swing.JFrame {
-
-    EquipeDAO equipeDAO = new EquipeDAO();
-    ArrayList<Equipe> equipes = equipeDAO.readAllEquipes();
+    static Favorits e=null;
+    FavoritsDAO equipeDAO = new FavoritsDAO();
+    ArrayList<Favorits> equipes = equipeDAO.readAllFavoritss();
     /**
      * Creates new form AjouterFavorits
      */
     public AjouterFavorits() {
         initComponents();
+    }
+    public AjouterFavorits(Favorits e) {
+        initComponents();
+        this.e=e;
     }
 
     /**
@@ -42,6 +47,7 @@ public class AjouterFavorits extends javax.swing.JFrame {
         id_equipe = new javax.swing.JComboBox();
         valider_button = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        btnModifier = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -76,6 +82,13 @@ public class AjouterFavorits extends javax.swing.JFrame {
             }
         });
 
+        btnModifier.setText("Modifier");
+        btnModifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifierActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,7 +97,10 @@ public class AjouterFavorits extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(valider_button)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnModifier)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(valider_button))
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel4)
@@ -111,7 +127,9 @@ public class AjouterFavorits extends javax.swing.JFrame {
                     .addComponent(id_equipe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(108, 108, 108)
-                .addComponent(valider_button)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(valider_button)
+                    .addComponent(btnModifier))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addContainerGap())
@@ -128,9 +146,21 @@ public class AjouterFavorits extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
+        if (e!=null) {
+            id_Utilisateur_Field.setText(Integer.toString(e.getId_User()));
+            
+            valider_button.setVisible(false);
+            btnModifier.setVisible(true);
+        }else
+        {
+            valider_button.setVisible(true);
+            btnModifier.setVisible(false);
+            
+        }
         for (int i = 0; i < equipes.size(); i++) {
             id_equipe.addItem(equipes.get(i).getId());
         }
+        
     }//GEN-LAST:event_formWindowOpened
 
     private void id_equipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_equipeActionPerformed
@@ -140,13 +170,24 @@ public class AjouterFavorits extends javax.swing.JFrame {
 
     private void valider_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valider_buttonActionPerformed
         // TODO add your handling code here:
-        Equipe equipe = equipes.get(id_equipe.getSelectedIndex()); //Récuperer l'equipe séléctionnée à partir du ComboBox 
+        Favorits equipe = equipes.get(id_equipe.getSelectedIndex()); //Récuperer l'equipe séléctionnée à partir du ComboBox 
         Favorits favorits = new Favorits(Integer.parseInt(id_Utilisateur_Field.getText()), equipe.getId());
         FavoritsDAO favoritsDAO = new FavoritsDAO();
         if(favoritsDAO.addFavorits(favorits) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
         }
     }//GEN-LAST:event_valider_buttonActionPerformed
+
+    private void btnModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierActionPerformed
+        // TODO add your handling code here:
+        Favorits equipe = new Favorits(e.getId(), e.getId_User(), e.getId_equipe());
+        FavoritsDAO employeDAO = new FavoritsDAO();
+        if(employeDAO.updateFavorits(equipe)){
+            JOptionPane.showMessageDialog(this, "Modification effectué avec succès !");
+            this.setVisible(false);
+            new AfficherFavorits().setVisible(true);
+        }
+    }//GEN-LAST:event_btnModifierActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,6 +224,7 @@ public class AjouterFavorits extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnModifier;
     private javax.swing.JTextField id_Utilisateur_Field;
     private javax.swing.JComboBox id_equipe;
     private javax.swing.JButton jButton2;

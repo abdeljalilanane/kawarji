@@ -13,6 +13,17 @@ public class Utilisateur {
     private int id;
     private String Nom,Prenom,Role,UserName,Password,mail,tel;
 
+    public Utilisateur(int id, String Nom, String Prenom, String Role, String mail, String tel ,String UserName, String Password) {
+        this.id = id;
+        this.Nom = Nom;
+        this.Prenom = Prenom;
+        this.Role = Role;
+        this.UserName = UserName;
+        this.Password = Password;
+        this.mail = mail;
+        this.tel = tel;
+    }
+
     public String getMail() {
         return mail;
     }
