@@ -8,6 +8,7 @@ import edu.esprit.dao.JoueurDAO;
 import edu.esprit.dao.EquipeDAO;
 import edu.esprit.entite.Joueur;
 import edu.esprit.entite.Equipe;
+import static edu.esprit.presentation.AjouterEquipe.e;
 import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JFileChooser;
@@ -18,7 +19,7 @@ import javax.swing.JOptionPane;
  * @author Wael Mallek
  */
 public class AjouterJoueur extends javax.swing.JFrame {
-
+static Joueur j=null;
     EquipeDAO equipeDAO = new EquipeDAO();
     ArrayList<Equipe> equipes = equipeDAO.readAllEquipes();
     JFileChooser fc;
@@ -29,6 +30,10 @@ public class AjouterJoueur extends javax.swing.JFrame {
      */
     public AjouterJoueur() {
         initComponents();
+    }
+    public AjouterJoueur(Joueur j) {
+        initComponents();
+        this.j=j;
     }
 
     /**
@@ -55,6 +60,7 @@ public class AjouterJoueur extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         img = new javax.swing.JButton();
+        btnModifier = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -106,6 +112,13 @@ public class AjouterJoueur extends javax.swing.JFrame {
             }
         });
 
+        btnModifier.setText("Modifier");
+        btnModifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifierActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,6 +129,8 @@ public class AjouterJoueur extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnModifier)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(valider_button))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -132,9 +147,8 @@ public class AjouterJoueur extends javax.swing.JFrame {
                             .addComponent(prenom_Field)
                             .addComponent(Num_box, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Equipe_box, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(img, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Saison_filed, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)))))
+                            .addComponent(img, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Saison_filed, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))))
                 .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -169,7 +183,8 @@ public class AjouterJoueur extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
-                    .addComponent(valider_button))
+                    .addComponent(valider_button)
+                    .addComponent(btnModifier))
                 .addContainerGap())
         );
 
@@ -184,6 +199,19 @@ public class AjouterJoueur extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
+        if (j!=null) {
+            
+            nom_Field.setText(j.getNom());
+            prenom_Field.setText(j.getPrenom());
+            Saison_filed.setText(j.getSaison());
+            
+            valider_button.setVisible(false);
+            btnModifier.setVisible(true);
+        }else
+        {
+            valider_button.setVisible(true);
+            btnModifier.setVisible(false);
+        }
         for (int i = 0; i < equipes.size(); i++) {
             Equipe_box.addItem(equipes.get(i).getNom());
         }
@@ -225,6 +253,16 @@ public class AjouterJoueur extends javax.swing.JFrame {
         
     }//GEN-LAST:event_imgActionPerformed
 
+    private void btnModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierActionPerformed
+        // TODO add your handling code here:
+        Equipe equipe = equipes.get(Equipe_box.getSelectedIndex()); //Récuperer l'equipe séléctionnée à partir du ComboBox 
+        Joueur joueur = new Joueur(j.getId(),equipe.getId(), Num_box.getSelectedIndex(), nom_Field.getText(), prenom_Field.getText(), Saison_filed.getText());
+        JoueurDAO employeDAO = new JoueurDAO();
+        if(employeDAO.updateJoueur(joueur)){
+            JOptionPane.showMessageDialog(this, "Modifier effectué avec succès !");
+        }
+    }//GEN-LAST:event_btnModifierActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -263,6 +301,7 @@ public class AjouterJoueur extends javax.swing.JFrame {
     private javax.swing.JComboBox Equipe_box;
     private javax.swing.JComboBox Num_box;
     private javax.swing.JTextField Saison_filed;
+    private javax.swing.JButton btnModifier;
     private javax.swing.JButton img;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

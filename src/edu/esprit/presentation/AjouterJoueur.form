@@ -32,6 +32,8 @@
                   <Group type="102" attributes="0">
                       <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnModifier" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="valider_button" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -50,10 +52,8 @@
                           <Component id="prenom_Field" max="32767" attributes="0"/>
                           <Component id="Num_box" alignment="0" max="32767" attributes="0"/>
                           <Component id="Equipe_box" alignment="0" min="-2" pref="203" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="img" alignment="0" max="32767" attributes="0"/>
-                              <Component id="Saison_filed" alignment="0" pref="203" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="img" alignment="0" max="32767" attributes="0"/>
+                          <Component id="Saison_filed" alignment="0" pref="206" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -100,6 +100,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="valider_button" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnModifier" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -201,6 +202,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="imgActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnModifier">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Modifier"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModifierActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
