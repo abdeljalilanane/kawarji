@@ -132,13 +132,12 @@ public class UtilisateurDAO {
     
     
     //Login
-    public Utilisateur checkUser(String login,String pass) {
+    public Utilisateur checklogin(String login) {
         Utilisateur utilisateur = new Utilisateur();
-        System.out.println(login+"   "+pass);
         try {
-            PreparedStatement stm = con.prepareStatement("SELECT * FROM user WHERE `password`=? and `username`=? ");
-            stm.setString(2,login);
-            stm.setString(1,pass);
+            PreparedStatement stm = con.prepareStatement("SELECT * FROM user WHERE `username`=? ");
+            stm.setString(1,login);
+
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 utilisateur.setId(rs.getInt(1));
@@ -157,5 +156,27 @@ public class UtilisateurDAO {
 
         return utilisateur;
         
+    }
+
+    public boolean checklogin2(String login) {
+        
+        String user = null;
+        
+        try {
+            
+            PreparedStatement stm = con.prepareStatement("SELECT * FROM user WHERE `username`=? ");
+            stm.setString(1,login);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                user = rs.getString(7);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (user != null) {
+            return true;
+        }
+        return false;
     }
 }

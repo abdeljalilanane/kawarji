@@ -5,12 +5,15 @@
 package kawarji;
 
 
+import api.mail;
 import edu.esprit.dao.UtilisateurDAO;
 import edu.esprit.entite.Utilisateur;
 import edu.esprit.presentation.AjouterUtilisateur;
 import edu.esprit.presentation.DashboardAdmin;
 import edu.esprit.presentation.DashboardUser;
+import edu.esprit.presentation.EnvoiMail;
 import java.awt.BorderLayout;
+import javax.swing.JOptionPane;
 import kawarji.SingUp;
 
 /**
@@ -60,6 +63,11 @@ public class login extends javax.swing.JFrame {
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/fb.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setContentAreaFilled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3);
         jButton3.setBounds(380, 240, 60, 50);
 
@@ -128,24 +136,32 @@ public class login extends javax.swing.JFrame {
        
        Utilisateur u = new Utilisateur();
        UtilisateurDAO dao = new UtilisateurDAO();
-       u = dao.checkUser(login, pass);
+       //u = dao.checkUser(login, pass);
+       u = dao.checklogin(login);
        System.out.println(u.getRole());
-
-        if (u.getRole() == null) {
+       
+        if (u.getRole()==null) {
             this.setVisible(false);
             new AjouterUtilisateur().setVisible(true);
-        } else
-            if (u.getRole().equals("Admin") ){
-            this.setVisible(false);
-            new DashboardAdmin().setVisible(true);
-            
         } else {
-            this.setVisible(false);
-            new DashboardUser(u).setVisible(true);
+            if (u.getPassword().equals(pass)) {
+                
+                if (u.getRole().equals("Admin") ){
+                    this.setVisible(false);
+                    new DashboardAdmin().setVisible(true);
+                } else if (u.getRole().equals("User") ){
+                    this.setVisible(false);
+                    new DashboardUser(u).setVisible(true);
+                } 
+                
+            } else {
+                mail env = new mail(u); 
+                env.envoyerMail();
+                System.out.println("Un mail a été envoyer :)");
+                JOptionPane.showMessageDialog(this, "Votre mot de pass est éroné \nUn Mail a été envoyer ");
+            }
+                        
         }
-            
-        
-       
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -154,6 +170,10 @@ public class login extends javax.swing.JFrame {
         this.setVisible(false);
             new AjouterUtilisateur().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
