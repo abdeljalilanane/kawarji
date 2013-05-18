@@ -56,7 +56,7 @@ public class AjouterFavorits extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Ajouter un employé :");
+        jLabel1.setText("Ajouter Favorite :");
 
         jLabel2.setText("Id uilisateur:");
 
@@ -111,7 +111,7 @@ public class AjouterFavorits extends javax.swing.JFrame {
                                 .addComponent(id_Utilisateur_Field)
                                 .addComponent(id_equipe, 0, 206, Short.MAX_VALUE))))
                     .addComponent(jButton2))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,12 +146,20 @@ public class AjouterFavorits extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
+        if(e.getId()==0)
+            {
+                id_Utilisateur_Field.setText(Integer.toString(e.getId_User()));
+            
+            valider_button.setVisible(true);
+            btnModifier.setVisible(false);
+            }else
         if (e!=null) {
             id_Utilisateur_Field.setText(Integer.toString(e.getId_User()));
             
             valider_button.setVisible(false);
             btnModifier.setVisible(true);
         }else
+            
         {
             valider_button.setVisible(true);
             btnModifier.setVisible(false);

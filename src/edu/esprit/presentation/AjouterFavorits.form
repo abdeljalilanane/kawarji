@@ -50,7 +50,7 @@
                   </Group>
                   <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="73" max="32767" attributes="0"/>
+              <EmptySpace pref="96" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -84,7 +84,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ajouter un employ&#xe9; :"/>
+        <Property name="text" type="java.lang.String" value="Ajouter Favorite :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">

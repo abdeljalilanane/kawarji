@@ -134,6 +134,7 @@ public class UtilisateurDAO {
     //Login
     public Utilisateur checkUser(String login,String pass) {
         Utilisateur utilisateur = new Utilisateur();
+        System.out.println(login+"   "+pass);
         try {
             PreparedStatement stm = con.prepareStatement("SELECT * FROM user WHERE `password`=? and `username`=? ");
             stm.setString(1, login);

@@ -7,6 +7,7 @@ package kawarji;
 
 import edu.esprit.dao.UtilisateurDAO;
 import edu.esprit.entite.Utilisateur;
+import edu.esprit.presentation.AjouterUtilisateur;
 import edu.esprit.presentation.DashboardUser;
 import java.awt.BorderLayout;
 import kawarji.SingUp;
@@ -74,6 +75,11 @@ public class login extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 144, 67));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/signup.png"))); // NOI18N
         jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(280, 270, 100, 30);
 
@@ -116,7 +122,7 @@ public class login extends javax.swing.JFrame {
         // Login 
         
        String login = TXT_Login.getText();
-       String pass = TXT_MotPass.getText();
+       String pass =new String( TXT_MotPass.getPassword());
        
        
        Utilisateur u = new Utilisateur();
@@ -126,7 +132,7 @@ public class login extends javax.swing.JFrame {
 
         if (u.getRole() == null) {
             this.setVisible(false);
-            new SingUp().setVisible(true);
+            new AjouterUtilisateur().setVisible(true);
         } else if (u.getRole() == "admin"){
             //this.setVisible(false);
             
@@ -139,6 +145,12 @@ public class login extends javax.swing.JFrame {
        
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+            new AjouterUtilisateur().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

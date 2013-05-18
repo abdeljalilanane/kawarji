@@ -76,6 +76,7 @@ public class DashboardUser extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jList1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(892, 504));
         getContentPane().setLayout(null);
 
         news.setColumns(20);
@@ -122,6 +123,9 @@ public class DashboardUser extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        Favorits fav=new Favorits(0, u.getId(),0);
+        new AjouterFavorits(fav).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
