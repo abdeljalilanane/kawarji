@@ -28,7 +28,7 @@ public class RSSReader {
      * @param feedurl URL du flux RSS
      */
     public String parse(String feedurl) {
-        String news = new String();
+        String news = new String("<html>");
         try {
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             URL url = new URL(feedurl);
@@ -51,7 +51,7 @@ public class RSSReader {
                 element = (Element) nodes.item(i);
                 System.out.println("Titre: " + readNode(element, "title"));
                 System.out.println("Lien: " + readNode(element, "link"));
-                news = news+readNode(element, "title")+":\n";
+                news = news+readNode(element, "title")+"<br>";
                
             } //for
             //for
@@ -62,6 +62,7 @@ public class RSSReader {
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(RSSReader.class.getName()).log(Level.SEVERE, null, ex);
         }
+        news = news+"</html>";
         return news;
     }
 
