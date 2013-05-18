@@ -54,21 +54,24 @@ public class AfficherEquipe extends javax.swing.JFrame {
         ListeEquipe.setModel(new edu.esprit.presentation.EquipeTableModel());
         jScrollPane1.setViewportView(ListeEquipe);
 
-        jButton1.setText("Retour");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
+        jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        bntModifier.setText("Modifier");
+        bntModifier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/modifier.png"))); // NOI18N
+        bntModifier.setBorder(null);
         bntModifier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntModifierActionPerformed(evt);
             }
         });
 
-        Btnsupprimer.setText("Supprimer");
+        Btnsupprimer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Supprmer.png"))); // NOI18N
+        Btnsupprimer.setBorder(null);
         Btnsupprimer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnsupprimerActionPerformed(evt);
@@ -89,7 +92,7 @@ public class AfficherEquipe extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(Btnsupprimer)
@@ -102,14 +105,14 @@ public class AfficherEquipe extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bntModifier)
                     .addComponent(Btnsupprimer))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
