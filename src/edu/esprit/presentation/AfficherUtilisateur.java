@@ -54,7 +54,8 @@ public class AfficherUtilisateur extends javax.swing.JFrame {
         ListeUtilisateur.setModel(new edu.esprit.presentation.UtilisateurTableModel());
         jScrollPane1.setViewportView(ListeUtilisateur);
 
-        jButton1.setText("Retour");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
+        jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -102,7 +103,7 @@ public class AfficherUtilisateur extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bntModifier)
                     .addComponent(Btnsupprimer))
