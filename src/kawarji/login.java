@@ -8,6 +8,7 @@ package kawarji;
 import edu.esprit.dao.UtilisateurDAO;
 import edu.esprit.entite.Utilisateur;
 import edu.esprit.presentation.AjouterUtilisateur;
+import edu.esprit.presentation.DashboardAdmin;
 import edu.esprit.presentation.DashboardUser;
 import java.awt.BorderLayout;
 import kawarji.SingUp;
@@ -133,8 +134,10 @@ public class login extends javax.swing.JFrame {
         if (u.getRole() == null) {
             this.setVisible(false);
             new AjouterUtilisateur().setVisible(true);
-        } else if (u.getRole() == "admin"){
-            //this.setVisible(false);
+        } else
+            if (u.getRole().equals("Admin") ){
+            this.setVisible(false);
+            new DashboardAdmin().setVisible(true);
             
         } else {
             this.setVisible(false);

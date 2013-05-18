@@ -117,8 +117,8 @@ public class AfficherEquipe extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        //this.setVisible(false);
-        //new Accueil().setVisible(true);
+        this.setVisible(false);
+        new DashboardAdmin().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

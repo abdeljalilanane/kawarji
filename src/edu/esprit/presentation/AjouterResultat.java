@@ -77,6 +77,7 @@ public class AjouterResultat extends javax.swing.JFrame {
         Tem_but9 = new javax.swing.JTextField();
         Jouer_id9 = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
+        btnRetour = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -155,18 +156,53 @@ public class AjouterResultat extends javax.swing.JFrame {
 
         Jouer_id2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
 
+        Tem_but3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Tem_but3MouseExited(evt);
+            }
+        });
+
         Jouer_id3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
 
+        Tem_but4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Tem_but4MouseExited(evt);
+            }
+        });
+
         Jouer_id4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
+
+        Tem_but5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Tem_but5MouseExited(evt);
+            }
+        });
 
         jLabel5.setText("Joueur");
 
         Jouer_id5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
 
+        Tem_but6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Tem_but6MouseExited(evt);
+            }
+        });
+
         Jouer_id6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
+
+        Tem_but7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Tem_but7MouseExited(evt);
+            }
+        });
 
         Jouer_id7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
 
+        Tem_but8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Tem_but8MouseExited(evt);
+            }
+        });
         Tem_but8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Tem_but8ActionPerformed(evt);
@@ -175,9 +211,22 @@ public class AjouterResultat extends javax.swing.JFrame {
 
         Jouer_id8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
 
+        Tem_but9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Tem_but9MouseExited(evt);
+            }
+        });
+
         Jouer_id9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
 
         jLabel6.setText("Temp but");
+
+        btnRetour.setText("Retour");
+        btnRetour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRetourActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -259,6 +308,10 @@ public class AjouterResultat extends javax.swing.JFrame {
                         .add(Valider)
                         .add(0, 0, Short.MAX_VALUE)))
                 .add(16, 16, 16))
+            .add(layout.createSequentialGroup()
+                .add(25, 25, 25)
+                .add(btnRetour)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -325,7 +378,9 @@ public class AjouterResultat extends javax.swing.JFrame {
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(Tem_but9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(Jouer_id9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 51, Short.MAX_VALUE)
+                .add(btnRetour)
+                .add(14, 14, 14))
         );
 
         pack();
@@ -658,6 +713,110 @@ public class AjouterResultat extends javax.swing.JFrame {
         Jouer_id2.setVisible(false);}
     }//GEN-LAST:event_Tem_but2MouseExited
 
+    private void btnRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetourActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new DashboardAdmin().setVisible(true);
+    }//GEN-LAST:event_btnRetourActionPerformed
+
+    private void Tem_but5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tem_but5MouseExited
+        // TODO add your handling code here:
+        if(Tem_but5.getText().equals("")==false)
+        {
+        Joueur joueurs2=joueurDAO.readJoueurNom(Jouer_id5.getSelectedItem().toString());
+        But but=new But(1, joueurs2.getId(), Tem_but5.getText());
+        ButDAO butdao=new ButDAO();
+        if(butdao.addBut(but) != 0){
+            JOptionPane.showMessageDialog(this, "Ajout effectué avec succès joueur!");
+        }
+        Tem_but5.setVisible(false);
+        Jouer_id5.setVisible(false);}
+    }//GEN-LAST:event_Tem_but5MouseExited
+
+    private void Tem_but3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tem_but3MouseExited
+        // TODO add your handling code here:
+        if(Tem_but3.getText().equals("")==false)
+        {
+        Joueur joueurs2=joueurDAO.readJoueurNom(Jouer_id3.getSelectedItem().toString());
+        But but=new But(1, joueurs2.getId(), Tem_but3.getText());
+        ButDAO butdao=new ButDAO();
+        if(butdao.addBut(but) != 0){
+            JOptionPane.showMessageDialog(this, "Ajout effectué avec succès joueur!");
+        }
+        Tem_but3.setVisible(false);
+        Jouer_id3.setVisible(false);}
+    }//GEN-LAST:event_Tem_but3MouseExited
+
+    private void Tem_but4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tem_but4MouseExited
+        // TODO add your handling code here:
+        if(Tem_but4.getText().equals("")==false)
+        {
+        Joueur joueurs2=joueurDAO.readJoueurNom(Jouer_id4.getSelectedItem().toString());
+        But but=new But(1, joueurs2.getId(), Tem_but4.getText());
+        ButDAO butdao=new ButDAO();
+        if(butdao.addBut(but) != 0){
+            JOptionPane.showMessageDialog(this, "Ajout effectué avec succès joueur!");
+        }
+        Tem_but4.setVisible(false);
+        Jouer_id4.setVisible(false);}
+    }//GEN-LAST:event_Tem_but4MouseExited
+
+    private void Tem_but6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tem_but6MouseExited
+        // TODO add your handling code here:
+        if(Tem_but6.getText().equals("")==false)
+        {
+        Joueur joueurs2=joueurDAO.readJoueurNom(Jouer_id6.getSelectedItem().toString());
+        But but=new But(1, joueurs2.getId(), Tem_but6.getText());
+        ButDAO butdao=new ButDAO();
+        if(butdao.addBut(but) != 0){
+            JOptionPane.showMessageDialog(this, "Ajout effectué avec succès joueur!");
+        }
+        Tem_but6.setVisible(false);
+        Jouer_id6.setVisible(false);}
+    }//GEN-LAST:event_Tem_but6MouseExited
+
+    private void Tem_but7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tem_but7MouseExited
+        // TODO add your handling code here:
+        if(Tem_but7.getText().equals("")==false)
+        {
+        Joueur joueurs2=joueurDAO.readJoueurNom(Jouer_id7.getSelectedItem().toString());
+        But but=new But(1, joueurs2.getId(), Tem_but7.getText());
+        ButDAO butdao=new ButDAO();
+        if(butdao.addBut(but) != 0){
+            JOptionPane.showMessageDialog(this, "Ajout effectué avec succès joueur!");
+        }
+        Tem_but7.setVisible(false);
+        Jouer_id7.setVisible(false);}
+    }//GEN-LAST:event_Tem_but7MouseExited
+
+    private void Tem_but8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tem_but8MouseExited
+        // TODO add your handling code here:
+        if(Tem_but8.getText().equals("")==false)
+        {
+        Joueur joueurs2=joueurDAO.readJoueurNom(Jouer_id8.getSelectedItem().toString());
+        But but=new But(1, joueurs2.getId(), Tem_but8.getText());
+        ButDAO butdao=new ButDAO();
+        if(butdao.addBut(but) != 0){
+            JOptionPane.showMessageDialog(this, "Ajout effectué avec succès joueur!");
+        }
+        Tem_but8.setVisible(false);
+        Jouer_id8.setVisible(false);}
+    }//GEN-LAST:event_Tem_but8MouseExited
+
+    private void Tem_but9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tem_but9MouseExited
+        // TODO add your handling code here:
+        if(Tem_but9.getText().equals("")==false)
+        {
+        Joueur joueurs2=joueurDAO.readJoueurNom(Jouer_id9.getSelectedItem().toString());
+        But but=new But(1, joueurs2.getId(), Tem_but9.getText());
+        ButDAO butdao=new ButDAO();
+        if(butdao.addBut(but) != 0){
+            JOptionPane.showMessageDialog(this, "Ajout effectué avec succès joueur!");
+        }
+        Tem_but9.setVisible(false);
+        Jouer_id9.setVisible(false);}
+    }//GEN-LAST:event_Tem_but9MouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -718,6 +877,7 @@ public class AjouterResultat extends javax.swing.JFrame {
     private javax.swing.JTextField Tem_but8;
     private javax.swing.JTextField Tem_but9;
     private javax.swing.JButton Valider;
+    private javax.swing.JButton btnRetour;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
