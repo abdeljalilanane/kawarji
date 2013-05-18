@@ -137,8 +137,8 @@ public class UtilisateurDAO {
         System.out.println(login+"   "+pass);
         try {
             PreparedStatement stm = con.prepareStatement("SELECT * FROM user WHERE `password`=? and `username`=? ");
-            stm.setString(1, login);
-            stm.setString(2, pass);
+            stm.setString(2,login);
+            stm.setString(1,pass);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 utilisateur.setId(rs.getInt(1));
