@@ -28,6 +28,8 @@ public class tachkila extends javax.swing.JFrame {
     JoueurDAO eDAO = new JoueurDAO();
         System.out.println(id_equipe);
     equipe=eDAO.readAllJoueursParEquipe(id_equipe);
+    if(id_equipe==2)
+    {
     Nj1.setText(equipe.get(0).getPrenom()); 
     Nj2.setText(equipe.get(1).getPrenom());
     Nj3.setText(equipe.get(2).getPrenom()); 
@@ -39,6 +41,22 @@ public class tachkila extends javax.swing.JFrame {
     Nj9.setText(equipe.get(8).getPrenom());
     Nj11.setText(equipe.get(9).getPrenom()); 
     Nj12.setText(equipe.get(10).getPrenom());
+    }
+    else
+        if(id_equipe==1)
+        {
+            Nj1.setText(equipe.get(0).getPrenom()); 
+    Nj2.setText(equipe.get(1).getPrenom());
+    Nj3.setText(equipe.get(2).getPrenom()); 
+    Nj4.setText(equipe.get(3).getPrenom());
+    Nj5.setText(equipe.get(4).getPrenom()); 
+    nj26.setText(equipe.get(5).getPrenom());
+    Nj7.setText(equipe.get(6).getPrenom()); 
+    Nj8.setText(equipe.get(7).getPrenom());
+    nj29.setText(equipe.get(8).getPrenom());
+    Nj11.setText(equipe.get(9).getPrenom()); 
+    Nj12.setText(equipe.get(10).getPrenom());
+        }
     }
 
     /**

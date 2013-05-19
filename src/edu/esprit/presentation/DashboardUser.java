@@ -64,6 +64,7 @@ public class DashboardUser extends javax.swing.JFrame {
 
         jScrollPane3 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
+        play = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         Eq2 = new javax.swing.JLabel();
@@ -93,6 +94,15 @@ public class DashboardUser extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(1200, 773));
         setMinimumSize(new java.awt.Dimension(1200, 773));
         getContentPane().setLayout(null);
+
+        play.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/play.png"))); // NOI18N
+        play.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                playMouseClicked(evt);
+            }
+        });
+        getContentPane().add(play);
+        play.setBounds(860, 20, 70, 60);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/equipicon.png"))); // NOI18N
         jButton3.setBorder(null);
@@ -207,6 +217,11 @@ public class DashboardUser extends javax.swing.JFrame {
         new tachkila(f.getId_equipe()).setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void playMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playMouseClicked
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_playMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -260,6 +275,7 @@ public class DashboardUser extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel news;
+    private javax.swing.JLabel play;
     private javax.swing.JLabel user;
     // End of variables declaration//GEN-END:variables
 }
