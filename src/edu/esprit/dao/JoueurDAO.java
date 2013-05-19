@@ -86,6 +86,30 @@ public class JoueurDAO {
         }
         return joueurs;
     }
+    public ArrayList<Joueur> readAllJoueursParEquipe(int id_equipe) {
+        ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
+        try {
+            PreparedStatement stm = con.prepareStatement("SELECT * FROM Joueur WHERE  `id_equipe` =?");
+            stm.setInt(1, id_equipe);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Joueur joueur = new Joueur();
+                joueur.setId(rs.getInt(1));
+                joueur.setId_Equipe(rs.getInt(2));
+                joueur.setNom(rs.getString(3));
+                joueur.setPrenom(rs.getString(4));
+                joueur.setSaison(rs.getString(5));
+                joueur.setNum(rs.getInt(6));
+                
+                
+                joueurs.add(joueur);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(JoueurDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return joueurs;
+    }
     
     public Joueur readJoueurID(int id) {
         Joueur joueur = new Joueur();

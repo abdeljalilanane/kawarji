@@ -64,6 +64,8 @@ public class DashboardUser extends javax.swing.JFrame {
 
         jScrollPane3 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
+        jButton3 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         Eq2 = new javax.swing.JLabel();
         Eq1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -91,6 +93,21 @@ public class DashboardUser extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(1200, 773));
         setMinimumSize(new java.awt.Dimension(1200, 773));
         getContentPane().setLayout(null);
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/equipicon.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(200, 20, 90, 60);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(20, 10, 1207, 78);
 
         Eq2.setText("jLabel4");
         getContentPane().add(Eq2);
@@ -181,6 +198,15 @@ public class DashboardUser extends javax.swing.JFrame {
         
     }//GEN-LAST:event_imgProfilMouseClicked
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        Favorits f = new Favorits();
+        Equipe e = new Equipe();
+        FavoritsDAO fv = new FavoritsDAO();
+        f = fv.readFavoritsID(u.getId());
+        new tachkila(f.getId_equipe()).setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -222,10 +248,12 @@ public class DashboardUser extends javax.swing.JFrame {
     private javax.swing.JLabel imgProfil;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JList jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
