@@ -106,10 +106,12 @@ public class MatchDAO {
     }
     
     public Match readLatsMatch(int id) {
+        System.out.println("match pour l'équipe"+id);
         Match match = new Match();
         try {
-            PreparedStatement stm = con.prepareStatement("SELECT * FROM `match` WHERE `id_E1` = 1 OR `id_E2` = 1 ORDER BY `id` DESC LIMIT 0,1");
+            PreparedStatement stm = con.prepareStatement("SELECT * FROM `match` WHERE `id_E1` = ? OR `id_E2` = ? ORDER BY `id` DESC LIMIT 0,1");
             stm.setInt(1, id);
+            stm.setInt(2, id);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 match.setId(rs.getInt(1));

@@ -7,8 +7,10 @@ package edu.esprit.presentation;
 import api.RSSReader;
 import edu.esprit.dao.EquipeDAO;
 import edu.esprit.dao.FavoritsDAO;
+import edu.esprit.dao.MatchDAO;
 import edu.esprit.entite.Equipe;
 import edu.esprit.entite.Favorits;
+import edu.esprit.entite.Match;
 import edu.esprit.entite.Utilisateur;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -30,7 +32,7 @@ public class DashboardUser extends javax.swing.JFrame {
         
         RSSReader reader = new RSSReader();
         news.setText(reader.parse("http://www.clubafricain.com/rss.asp"));
-          Icon i=new ImageIcon("image/ca.png");
+        Icon i=new ImageIcon("src/image/1.png");
         Eq1.setIcon(i);
     }
     public DashboardUser(Utilisateur u) {
@@ -39,15 +41,39 @@ public class DashboardUser extends javax.swing.JFrame {
         user.setText(u.getPrenom()+" "+u.getNom());
         
         Favorits f = new Favorits();
-        Equipe e = new Equipe();
+        Equipe e,e1,e2 = new Equipe();
+        Match m = new Match();
         FavoritsDAO fv = new FavoritsDAO();
         f = fv.readFavoritsID(u.getId());
         EquipeDAO eq = new EquipeDAO();
         e = eq.readEquipeID(f.getId_equipe());
+        MatchDAO md = new MatchDAO();
+        m = md.readLatsMatch(f.getId_equipe());
         
         RSSReader reader = new RSSReader();
         news.setText(reader.parse(e.getFlux()));
         //reader.parse1("http://www.clubafricain.com/rss.asp");
+        
+        
+        if (m.getId_E1()==f.getId_equipe()) {
+            e1= eq.readEquipeID(m.getId_E1());
+            e2 = eq.readEquipeID(m.getId_E2());
+        } else {
+            e2= eq.readEquipeID(m.getId_E1());
+            e1 = eq.readEquipeID(m.getId_E2());
+        }
+        
+        
+       
+        
+        
+        Icon i=new ImageIcon("src/image/"+e1.getId()+".png");
+        Icon i2=new ImageIcon("src/image/"+e2.getId()+".png");
+        Eq1.setIcon(i);
+        Eq2.setIcon(i2);
+        
+        R1.setText(e1.getNom()+"  :  "+m.getR1());
+        R2.setText(+m.getR2()+" :   "+e2.getNom());
         
         
         
@@ -69,7 +95,9 @@ public class DashboardUser extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         Eq2 = new javax.swing.JLabel();
         Eq1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        R1 = new javax.swing.JLabel();
+        R2 = new javax.swing.JLabel();
+        R = new javax.swing.JLabel();
         user = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -118,19 +146,29 @@ public class DashboardUser extends javax.swing.JFrame {
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(20, 10, 1207, 78);
-
-        Eq2.setText("jLabel4");
         getContentPane().add(Eq2);
-        Eq2.setBounds(530, 390, 45, 16);
+        Eq2.setBounds(490, 370, 100, 50);
 
-        Eq1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/est.png"))); // NOI18N
+        Eq1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/1.png"))); // NOI18N
         getContentPane().add(Eq1);
         Eq1.setBounds(100, 370, 60, 50);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/rest.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(70, 350, 540, 90);
+        R1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        R1.setForeground(new java.awt.Color(255, 255, 255));
+        R1.setText("1");
+        getContentPane().add(R1);
+        R1.setBounds(205, 376, 120, 40);
+
+        R2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        R2.setForeground(new java.awt.Color(255, 255, 255));
+        R2.setText("3");
+        getContentPane().add(R2);
+        R2.setBounds(370, 376, 80, 40);
+
+        R.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/rest.png"))); // NOI18N
+        R.setText("jLabel3");
+        getContentPane().add(R);
+        R.setBounds(70, 350, 540, 90);
 
         user.setText("Nom Prenom");
         getContentPane().add(user);
@@ -259,6 +297,9 @@ public class DashboardUser extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Eq1;
     private javax.swing.JLabel Eq2;
+    private javax.swing.JLabel R;
+    private javax.swing.JLabel R1;
+    private javax.swing.JLabel R2;
     private javax.swing.JLabel fond;
     private javax.swing.JLabel imgProfil;
     private javax.swing.JButton jButton1;
@@ -267,7 +308,6 @@ public class DashboardUser extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JList jList1;
     private javax.swing.JMenu jMenu1;
