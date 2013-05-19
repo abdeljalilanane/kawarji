@@ -450,7 +450,7 @@ public class AjouterResultat extends javax.swing.JFrame {
         // TODO add your handling code here:
         int nb=0;
         
-        nb=(int) R1.getValue();
+        nb=Integer.getInteger(R1.getValue().toString());
         if(nb==0)
         {
             jLabel3.setVisible(false);
@@ -548,7 +548,7 @@ public class AjouterResultat extends javax.swing.JFrame {
         // TODO add your handling code here:
         int nb=0;
         
-        nb=(int) (int) R2.getValue();
+        nb=Integer.getInteger(R2.getValue().toString());
         if(nb==0)
         {
             jLabel5.setVisible(false);
