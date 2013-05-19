@@ -105,6 +105,26 @@ public class MatchDAO {
         return match;
     }
     
+    public Match readLatsMatch(int id) {
+        Match match = new Match();
+        try {
+            PreparedStatement stm = con.prepareStatement("SELECT * FROM `match` WHERE `id_E1` = 1 OR `id_E2` = 1 ORDER BY `id` DESC LIMIT 0,1");
+            stm.setInt(1, id);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                match.setId(rs.getInt(1));
+                match.setId_E1(rs.getInt(2));
+                match.setR1(rs.getInt(3));
+                match.setR2(rs.getInt(4));
+                match.setId_E2(rs.getInt(5));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(MatchDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return match;
+    }
+    
     public boolean deleteMatch(Match match) {
         boolean test = false;
         try {
