@@ -55,12 +55,23 @@ static Equipe e=null;
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(null);
 
         jLabel1.setText("Ajouter une equipe :");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(10, 20, 99, 14);
 
         jLabel2.setText("Nom:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(84, 64, 25, 14);
 
         jLabel3.setText("entraineur:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(55, 106, 54, 14);
+        getContentPane().add(nom_Field);
+        nom_Field.setBounds(119, 61, 206, 20);
+        getContentPane().add(entraineur_Field);
+        entraineur_Field.setBounds(119, 103, 206, 20);
 
         valider_button.setText("Valider");
         valider_button.addActionListener(new java.awt.event.ActionListener() {
@@ -68,6 +79,8 @@ static Equipe e=null;
                 valider_buttonActionPerformed(evt);
             }
         });
+        getContentPane().add(valider_button);
+        valider_button.setBounds(260, 223, 65, 23);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
         jButton2.setBorder(null);
@@ -76,6 +89,8 @@ static Equipe e=null;
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(10, 264, 121, 37);
 
         btnModifier.setText("Modifier");
         btnModifier.addActionListener(new java.awt.event.ActionListener() {
@@ -83,60 +98,14 @@ static Equipe e=null;
                 btnModifierActionPerformed(evt);
             }
         });
+        getContentPane().add(btnModifier);
+        btnModifier.setBounds(183, 223, 71, 23);
 
         jLabel4.setText("Flux :");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnModifier)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(valider_button))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel1)
-                                .addComponent(jLabel4))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(nom_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                                .addComponent(entraineur_Field)
-                                .addComponent(Flux_text))))
-                    .addComponent(jButton2))
-                .addContainerGap(77, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(nom_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(entraineur_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(Flux_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(69, 69, 69)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(valider_button)
-                    .addComponent(btnModifier))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addContainerGap())
-        );
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(82, 137, 27, 14);
+        getContentPane().add(Flux_text);
+        Flux_text.setBounds(119, 134, 206, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

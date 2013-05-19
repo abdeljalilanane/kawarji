@@ -30,32 +30,33 @@ public class tachkila extends javax.swing.JFrame {
     equipe=eDAO.readAllJoueursParEquipe(id_equipe);
     if(id_equipe==2)
     {
-    Nj1.setText(equipe.get(0).getPrenom()); 
-    Nj2.setText(equipe.get(1).getPrenom());
-    Nj3.setText(equipe.get(2).getPrenom()); 
-    Nj4.setText(equipe.get(3).getPrenom());
-    Nj5.setText(equipe.get(4).getPrenom()); 
-    Nj6.setText(equipe.get(5).getPrenom());
-    Nj7.setText(equipe.get(6).getPrenom()); 
-    Nj8.setText(equipe.get(7).getPrenom());
-    Nj9.setText(equipe.get(8).getPrenom());
-    Nj11.setText(equipe.get(9).getPrenom()); 
-    Nj12.setText(equipe.get(10).getPrenom());
+    jLabel1.setText(equipe.get(0).getPrenom()); 
+    jLabel2.setText(equipe.get(1).getPrenom());
+    jLabel3.setText(equipe.get(2).getPrenom()); 
+    jLabel4.setText(equipe.get(3).getPrenom());
+    jLabel5.setText(equipe.get(4).getPrenom()); 
+    jLabel6.setText(equipe.get(5).getPrenom());
+    jLabel7.setText(equipe.get(6).getPrenom()); 
+    jLabel8.setText(equipe.get(7).getPrenom());
+    jLabel9.setText(equipe.get(8).getPrenom());
+    jLabel10.setText(equipe.get(9).getPrenom()); 
+    jLabel11.setText(equipe.get(10).getPrenom());
     }
     else
         if(id_equipe==1)
         {
-            Nj1.setText(equipe.get(0).getPrenom()); 
-    Nj2.setText(equipe.get(1).getPrenom());
-    Nj3.setText(equipe.get(2).getPrenom()); 
-    Nj4.setText(equipe.get(3).getPrenom());
-    Nj5.setText(equipe.get(4).getPrenom()); 
-    nj26.setText(equipe.get(5).getPrenom());
-    Nj7.setText(equipe.get(6).getPrenom()); 
-    Nj8.setText(equipe.get(7).getPrenom());
-    nj29.setText(equipe.get(8).getPrenom());
-    Nj11.setText(equipe.get(9).getPrenom()); 
-    Nj12.setText(equipe.get(10).getPrenom());
+            fond.setVisible(false);
+    jLabel1.setText(equipe.get(0).getPrenom()); 
+    jLabel2.setText(equipe.get(1).getPrenom());
+    jLabel3.setText(equipe.get(2).getPrenom()); 
+    jLabel4.setText(equipe.get(3).getPrenom());
+    jLabel5.setText(equipe.get(4).getPrenom()); 
+    jLabel6.setText(equipe.get(5).getPrenom());
+    jLabel7.setText(equipe.get(6).getPrenom()); 
+    jLabel8.setText(equipe.get(7).getPrenom());
+    jLabel9.setText(equipe.get(8).getPrenom());
+    jLabel10.setText(equipe.get(9).getPrenom()); 
+    jLabel11.setText(equipe.get(10).getPrenom());
         }
     }
 
@@ -68,88 +69,81 @@ public class tachkila extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Nj1 = new javax.swing.JLabel();
-        Nj2 = new javax.swing.JLabel();
-        Nj3 = new javax.swing.JLabel();
-        Nj4 = new javax.swing.JLabel();
-        Nj5 = new javax.swing.JLabel();
-        Nj7 = new javax.swing.JLabel();
-        Nj8 = new javax.swing.JLabel();
-        Nj11 = new javax.swing.JLabel();
-        Nj12 = new javax.swing.JLabel();
-        Nj6 = new javax.swing.JLabel();
-        Nj9 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         fond = new javax.swing.JLabel();
-        nj26 = new javax.swing.JLabel();
-        nj29 = new javax.swing.JLabel();
         fond1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(674, 835));
-        setMinimumSize(new java.awt.Dimension(674, 835));
+        setMaximumSize(new java.awt.Dimension(1366, 700));
+        setMinimumSize(new java.awt.Dimension(1366, 700));
         getContentPane().setLayout(null);
 
-        Nj1.setText("jLabel3");
-        getContentPane().add(Nj1);
-        Nj1.setBounds(320, 120, 45, 16);
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(170, 280, 34, 14);
 
-        Nj2.setText("jLabel2");
-        getContentPane().add(Nj2);
-        Nj2.setBounds(60, 280, 45, 16);
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(380, 60, 34, 14);
 
-        Nj3.setText("jLabel3");
-        getContentPane().add(Nj3);
-        Nj3.setBounds(200, 280, 45, 16);
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(370, 240, 34, 14);
 
-        Nj4.setText("jLabel3");
-        getContentPane().add(Nj4);
-        Nj4.setBounds(380, 280, 45, 16);
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(390, 420, 34, 14);
 
-        Nj5.setText("jLabel3");
-        getContentPane().add(Nj5);
-        Nj5.setBounds(550, 280, 45, 16);
+        jLabel5.setText("jLabel5");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(390, 550, 34, 14);
 
-        Nj7.setText("jLabel3");
-        getContentPane().add(Nj7);
-        Nj7.setBounds(230, 480, 45, 16);
+        jLabel6.setText("jLabel6");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(660, 120, 34, 14);
 
-        Nj8.setText("jLabel3");
-        getContentPane().add(Nj8);
-        Nj8.setBounds(440, 480, 45, 16);
+        jLabel7.setText("jLabel7");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(660, 270, 34, 14);
 
-        Nj11.setText("jLabel3");
-        getContentPane().add(Nj11);
-        Nj11.setBounds(190, 740, 45, 16);
+        jLabel8.setText("jLabel8");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(670, 470, 34, 14);
 
-        Nj12.setText("jLabel3");
-        getContentPane().add(Nj12);
-        Nj12.setBounds(440, 740, 45, 16);
+        jLabel9.setText("jLabel9");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(670, 560, 34, 14);
 
-        Nj6.setText("jLabel3");
-        getContentPane().add(Nj6);
-        Nj6.setBounds(60, 580, 45, 16);
+        jLabel10.setText("jLabel10");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(900, 200, 40, 14);
 
-        Nj9.setText("jLabel3");
-        getContentPane().add(Nj9);
-        Nj9.setBounds(590, 580, 45, 16);
+        jLabel11.setText("jLabel11");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(900, 380, 40, 14);
 
         fond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/442.png"))); // NOI18N
         fond.setText("jLabel1");
+        fond.setMaximumSize(new java.awt.Dimension(1366, 700));
+        fond.setMinimumSize(new java.awt.Dimension(1366, 700));
+        fond.setPreferredSize(new java.awt.Dimension(1366, 700));
         getContentPane().add(fond);
-        fond.setBounds(0, 0, 670, 830);
-
-        nj26.setText("jLabel1");
-        getContentPane().add(nj26);
-        nj26.setBounds(60, 490, 45, 16);
-
-        nj29.setText("jLabel1");
-        getContentPane().add(nj29);
-        nj29.setBounds(590, 480, 45, 16);
+        fond.setBounds(0, 0, 1350, 690);
 
         fond1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/4411.png"))); // NOI18N
         fond1.setText("jLabel1");
         getContentPane().add(fond1);
-        fond1.setBounds(0, 0, 670, 830);
+        fond1.setBounds(0, 0, 1350, 690);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -189,20 +183,18 @@ public class tachkila extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Nj1;
-    private javax.swing.JLabel Nj11;
-    private javax.swing.JLabel Nj12;
-    private javax.swing.JLabel Nj2;
-    private javax.swing.JLabel Nj3;
-    private javax.swing.JLabel Nj4;
-    private javax.swing.JLabel Nj5;
-    private javax.swing.JLabel Nj6;
-    private javax.swing.JLabel Nj7;
-    private javax.swing.JLabel Nj8;
-    private javax.swing.JLabel Nj9;
     private javax.swing.JLabel fond;
     private javax.swing.JLabel fond1;
-    private javax.swing.JLabel nj26;
-    private javax.swing.JLabel nj29;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }

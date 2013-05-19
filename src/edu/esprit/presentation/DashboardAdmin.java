@@ -37,6 +37,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jButton1.setText("Affichier E");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -44,6 +45,8 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(45, 38, 81, 23);
 
         jButton2.setText("Affichier F");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -51,6 +54,8 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(45, 79, 81, 23);
 
         jButton3.setText("Affichier J");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -58,6 +63,8 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(45, 113, 81, 23);
 
         jButton4.setText("Affichier U");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +72,8 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton4);
+        jButton4.setBounds(45, 154, 83, 23);
 
         jButton5.setText("Ajouter E");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -72,6 +81,8 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton5);
+        jButton5.setBounds(209, 38, 77, 23);
 
         jButton6.setText("Ajouter F");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -79,6 +90,8 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton6);
+        jButton6.setBounds(209, 79, 77, 23);
 
         jButton7.setText("Ajouter J");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +99,8 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton7);
+        jButton7.setBounds(209, 113, 77, 23);
 
         jButton8.setText("Ajouter U");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +108,8 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton8);
+        jButton8.setBounds(207, 154, 79, 23);
 
         jButton9.setText("Ajouter Resultat Match");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -100,56 +117,8 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-
-        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .add(45, 45, 45)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(layout.createSequentialGroup()
-                        .add(jButton4)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jButton8))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(jButton3)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jButton7))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(jButton2)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jButton6))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(jButton1)
-                        .add(83, 83, 83)
-                        .add(jButton5)))
-                .add(142, 142, 142)
-                .add(jButton9)
-                .addContainerGap(135, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .add(38, 38, 38)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jButton1)
-                    .add(jButton5)
-                    .add(jButton9))
-                .add(18, 18, 18)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jButton2)
-                    .add(jButton6))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jButton3)
-                    .add(jButton7))
-                .add(18, 18, 18)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jButton4)
-                    .add(jButton8))
-                .addContainerGap(155, Short.MAX_VALUE))
-        );
+        getContentPane().add(jButton9);
+        jButton9.setBounds(428, 38, 143, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

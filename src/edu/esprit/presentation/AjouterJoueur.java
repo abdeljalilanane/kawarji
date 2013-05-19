@@ -68,20 +68,35 @@ static Joueur j=null;
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(null);
 
         jLabel1.setText("Ajouter un joueur :");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(10, 20, 92, 14);
 
         jLabel2.setText("Nom:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(77, 64, 25, 14);
 
         jLabel3.setText("Prénom:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(62, 106, 40, 14);
 
         jLabel4.setText("Equipe :");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(63, 175, 39, 14);
+        getContentPane().add(nom_Field);
+        nom_Field.setBounds(112, 61, 206, 20);
+        getContentPane().add(prenom_Field);
+        prenom_Field.setBounds(112, 103, 206, 20);
 
         Equipe_box.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Equipe_boxActionPerformed(evt);
             }
         });
+        getContentPane().add(Equipe_box);
+        Equipe_box.setBounds(112, 172, 203, 20);
 
         valider_button.setText("Valider");
         valider_button.addActionListener(new java.awt.event.ActionListener() {
@@ -89,6 +104,8 @@ static Joueur j=null;
                 valider_buttonActionPerformed(evt);
             }
         });
+        getContentPane().add(valider_button);
+        valider_button.setBounds(253, 371, 65, 23);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
         jButton2.setBorder(null);
@@ -97,14 +114,26 @@ static Joueur j=null;
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(10, 371, 121, 37);
 
         jLabel5.setText("Numero :");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(58, 144, 44, 14);
 
         Num_box.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13" }));
+        getContentPane().add(Num_box);
+        Num_box.setBounds(112, 141, 206, 20);
+        getContentPane().add(Saison_filed);
+        Saison_filed.setBounds(112, 198, 206, 20);
 
         jLabel6.setText("Saison :");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(64, 201, 38, 14);
 
         jLabel7.setText("image : ");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(64, 240, 38, 14);
 
         img.setText("Choisir");
         img.addActionListener(new java.awt.event.ActionListener() {
@@ -112,6 +141,8 @@ static Joueur j=null;
                 imgActionPerformed(evt);
             }
         });
+        getContentPane().add(img);
+        img.setBounds(112, 236, 206, 23);
 
         btnModifier.setText("Modifier");
         btnModifier.addActionListener(new java.awt.event.ActionListener() {
@@ -119,75 +150,8 @@ static Joueur j=null;
                 btnModifierActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnModifier)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(valider_button))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(nom_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                            .addComponent(prenom_Field)
-                            .addComponent(Num_box, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Equipe_box, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(img, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Saison_filed, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))))
-                .addContainerGap(86, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(nom_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(prenom_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(Num_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Equipe_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Saison_filed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(img))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(valider_button)
-                    .addComponent(btnModifier))
-                .addContainerGap())
-        );
+        getContentPane().add(btnModifier);
+        btnModifier.setBounds(176, 371, 71, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

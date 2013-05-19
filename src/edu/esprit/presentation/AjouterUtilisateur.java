@@ -67,18 +67,29 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(null);
 
         jLabel1.setText("Ajouter un Utilisateur :");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(10, 20, 109, 14);
 
         jLabel2.setText("Nom:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(94, 64, 25, 14);
 
         jLabel3.setText("Prenom :");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(76, 106, 43, 14);
 
         nom_Field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nom_FieldActionPerformed(evt);
             }
         });
+        getContentPane().add(nom_Field);
+        nom_Field.setBounds(129, 61, 206, 20);
+        getContentPane().add(prenom_Field);
+        prenom_Field.setBounds(129, 103, 206, 20);
 
         valider_button.setText("Valider");
         valider_button.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +97,8 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
                 valider_buttonActionPerformed(evt);
             }
         });
+        getContentPane().add(valider_button);
+        valider_button.setBounds(270, 361, 65, 23);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
         jButton2.setBorder(null);
@@ -94,18 +107,40 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(10, 361, 121, 37);
 
         Role_Field.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Admin", "User" }));
+        getContentPane().add(Role_Field);
+        Role_Field.setBounds(129, 141, 206, 20);
 
         jLabel4.setText("Role :");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(91, 144, 28, 14);
+        getContentPane().add(Email_Field);
+        Email_Field.setBounds(129, 172, 206, 20);
 
         jLabel5.setText("E-mail :");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(84, 175, 35, 14);
+        getContentPane().add(Tel_Field);
+        Tel_Field.setBounds(129, 203, 206, 20);
 
         jLabel6.setText("Telephone :");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(62, 206, 57, 14);
+        getContentPane().add(login_Field);
+        login_Field.setBounds(129, 229, 206, 20);
 
         jLabel7.setText("Login :");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(87, 232, 32, 14);
+        getContentPane().add(Password_Field);
+        Password_Field.setBounds(129, 255, 206, 20);
 
         jLabel8.setText("Passeword :");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(60, 258, 59, 14);
 
         btnModifier.setText("Modifier");
         btnModifier.addActionListener(new java.awt.event.ActionListener() {
@@ -113,82 +148,8 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
                 btnModifierActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Password_Field)
-                            .addComponent(login_Field)
-                            .addComponent(Tel_Field)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btnModifier)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(valider_button))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(nom_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                                    .addComponent(prenom_Field)
-                                    .addComponent(Role_Field, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(Email_Field))))
-                .addContainerGap(61, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(nom_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(prenom_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Role_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Email_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Tel_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(login_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Password_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(valider_button)
-                    .addComponent(btnModifier))
-                .addContainerGap())
-        );
+        getContentPane().add(btnModifier);
+        btnModifier.setBounds(189, 361, 71, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -55,18 +55,29 @@ public class AjouterFavorits extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(null);
 
         jLabel1.setText("Ajouter Favorite :");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(10, 20, 86, 14);
 
         jLabel2.setText("Id uilisateur:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(36, 64, 60, 14);
 
         jLabel4.setText("Equipe :");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(57, 102, 39, 14);
+        getContentPane().add(id_Utilisateur_Field);
+        id_Utilisateur_Field.setBounds(106, 61, 206, 20);
 
         id_equipe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 id_equipeActionPerformed(evt);
             }
         });
+        getContentPane().add(id_equipe);
+        id_equipe.setBounds(106, 99, 206, 20);
 
         valider_button.setText("Valider");
         valider_button.addActionListener(new java.awt.event.ActionListener() {
@@ -74,6 +85,8 @@ public class AjouterFavorits extends javax.swing.JFrame {
                 valider_buttonActionPerformed(evt);
             }
         });
+        getContentPane().add(valider_button);
+        valider_button.setBounds(247, 227, 65, 23);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
         jButton2.setBorder(null);
@@ -82,6 +95,8 @@ public class AjouterFavorits extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(10, 268, 121, 37);
 
         btnModifier.setText("Modifier");
         btnModifier.addActionListener(new java.awt.event.ActionListener() {
@@ -89,52 +104,8 @@ public class AjouterFavorits extends javax.swing.JFrame {
                 btnModifierActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnModifier)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(valider_button))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel1))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(id_Utilisateur_Field)
-                                .addComponent(id_equipe, 0, 206, Short.MAX_VALUE))))
-                    .addComponent(jButton2))
-                .addContainerGap(96, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(id_Utilisateur_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(id_equipe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(108, 108, 108)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(valider_button)
-                    .addComponent(btnModifier))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addContainerGap())
-        );
+        getContentPane().add(btnModifier);
+        btnModifier.setBounds(166, 227, 71, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

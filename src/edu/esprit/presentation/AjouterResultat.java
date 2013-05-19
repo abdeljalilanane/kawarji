@@ -45,6 +45,7 @@ public class AjouterResultat extends javax.swing.JFrame {
     private void initComponents() {
 
         jSeparator1 = new javax.swing.JSeparator();
+        jLabel8 = new javax.swing.JLabel();
         Equipe1 = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         Equipe2 = new javax.swing.JComboBox();
@@ -78,21 +79,36 @@ public class AjouterResultat extends javax.swing.JFrame {
         Jouer_id9 = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
         btnRetour = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1366, 760));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(null);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(170, 340, 130, 50);
 
         Equipe1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Equipe ::." }));
+        getContentPane().add(Equipe1);
+        Equipe1.setBounds(69, 23, 149, 20);
 
         jLabel1.setText("Equipe 1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(10, 26, 41, 14);
 
         Equipe2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Equipe ::." }));
+        getContentPane().add(Equipe2);
+        Equipe2.setBounds(441, 23, 149, 20);
 
         jLabel2.setText("Equipe 2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(594, 26, 41, 14);
 
         R1.setEditor(new javax.swing.JSpinner.NumberEditor(R1, ""));
         R1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -109,12 +125,18 @@ public class AjouterResultat extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
+        getContentPane().add(R1);
+        R1.setBounds(224, 23, 60, 30);
 
         R2.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 R2StateChanged(evt);
             }
         });
+        getContentPane().add(R2);
+        R2.setBounds(383, 23, 48, 20);
+        getContentPane().add(jSeparator2);
+        jSeparator2.setBounds(43, 83, 592, 2);
 
         Valider.setText("Valider");
         Valider.addActionListener(new java.awt.event.ActionListener() {
@@ -122,10 +144,16 @@ public class AjouterResultat extends javax.swing.JFrame {
                 ValiderActionPerformed(evt);
             }
         });
+        getContentPane().add(Valider);
+        Valider.setBounds(350, 54, 65, 23);
 
         jLabel3.setText("Joueur");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(130, 104, 33, 14);
 
         jLabel4.setText("Temp but");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(307, 104, 45, 14);
 
         Tem_but.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -137,66 +165,100 @@ public class AjouterResultat extends javax.swing.JFrame {
                 Tem_butActionPerformed(evt);
             }
         });
+        getContentPane().add(Tem_but);
+        Tem_but.setBounds(246, 129, 81, 20);
 
         Jouer_id.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
+        getContentPane().add(Jouer_id);
+        Jouer_id.setBounds(50, 129, 144, 20);
 
         Tem_but1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Tem_but1MouseExited(evt);
             }
         });
+        getContentPane().add(Tem_but1);
+        Tem_but1.setBounds(246, 160, 81, 20);
 
         Jouer_id1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
+        getContentPane().add(Jouer_id1);
+        Jouer_id1.setBounds(50, 160, 144, 20);
 
         Tem_but2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Tem_but2MouseExited(evt);
             }
         });
+        getContentPane().add(Tem_but2);
+        Tem_but2.setBounds(246, 191, 81, 20);
 
         Jouer_id2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
+        getContentPane().add(Jouer_id2);
+        Jouer_id2.setBounds(50, 191, 144, 20);
 
         Tem_but3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Tem_but3MouseExited(evt);
             }
         });
+        getContentPane().add(Tem_but3);
+        Tem_but3.setBounds(246, 222, 81, 20);
 
         Jouer_id3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
+        getContentPane().add(Jouer_id3);
+        Jouer_id3.setBounds(50, 222, 144, 20);
 
         Tem_but4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Tem_but4MouseExited(evt);
             }
         });
+        getContentPane().add(Tem_but4);
+        Tem_but4.setBounds(246, 248, 81, 20);
 
         Jouer_id4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
+        getContentPane().add(Jouer_id4);
+        Jouer_id4.setBounds(50, 248, 144, 20);
 
         Tem_but5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Tem_but5MouseExited(evt);
             }
         });
+        getContentPane().add(Tem_but5);
+        Tem_but5.setBounds(546, 129, 81, 20);
 
         jLabel5.setText("Joueur");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(405, 104, 33, 14);
 
         Jouer_id5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
+        getContentPane().add(Jouer_id5);
+        Jouer_id5.setBounds(356, 129, 144, 20);
 
         Tem_but6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Tem_but6MouseExited(evt);
             }
         });
+        getContentPane().add(Tem_but6);
+        Tem_but6.setBounds(546, 160, 81, 20);
 
         Jouer_id6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
+        getContentPane().add(Jouer_id6);
+        Jouer_id6.setBounds(356, 160, 144, 20);
 
         Tem_but7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Tem_but7MouseExited(evt);
             }
         });
+        getContentPane().add(Tem_but7);
+        Tem_but7.setBounds(546, 191, 81, 20);
 
         Jouer_id7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
+        getContentPane().add(Jouer_id7);
+        Jouer_id7.setBounds(356, 191, 144, 20);
 
         Tem_but8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -208,181 +270,43 @@ public class AjouterResultat extends javax.swing.JFrame {
                 Tem_but8ActionPerformed(evt);
             }
         });
+        getContentPane().add(Tem_but8);
+        Tem_but8.setBounds(546, 222, 81, 20);
 
         Jouer_id8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
+        getContentPane().add(Jouer_id8);
+        Jouer_id8.setBounds(356, 222, 144, 20);
 
         Tem_but9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Tem_but9MouseExited(evt);
             }
         });
+        getContentPane().add(Tem_but9);
+        Tem_but9.setBounds(546, 248, 81, 20);
 
         Jouer_id9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
+        getContentPane().add(Jouer_id9);
+        Jouer_id9.setBounds(356, 248, 144, 20);
 
         jLabel6.setText("Temp but");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(582, 104, 45, 14);
 
         btnRetour.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
         btnRetour.setBorder(null);
+        btnRetour.setOpaque(false);
         btnRetour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRetourActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRetour);
+        btnRetour.setBounds(25, 331, 130, 60);
 
-        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(130, 130, 130)
-                        .add(jLabel3)
-                        .add(144, 144, 144)
-                        .add(jLabel4))
-                    .add(layout.createSequentialGroup()
-                        .add(50, 50, 50)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(layout.createSequentialGroup()
-                                .add(Jouer_id1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(52, 52, 52)
-                                .add(Tem_but1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(layout.createSequentialGroup()
-                                .add(Jouer_id, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(52, 52, 52)
-                                .add(Tem_but, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(layout.createSequentialGroup()
-                                .add(Jouer_id2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(52, 52, 52)
-                                .add(Tem_but2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(layout.createSequentialGroup()
-                                .add(Jouer_id3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(52, 52, 52)
-                                .add(Tem_but3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(layout.createSequentialGroup()
-                                .add(Jouer_id4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(52, 52, 52)
-                                .add(Tem_but4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(jLabel5)
-                        .add(144, 144, 144)
-                        .add(jLabel6))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(Jouer_id8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(Jouer_id6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(Jouer_id7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(Jouer_id9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(Jouer_id5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(46, 46, 46)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                .add(Tem_but7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(Tem_but5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(Tem_but6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                .add(Tem_but9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(Tem_but8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
-                .add(24, 24, 24))
-            .add(layout.createSequentialGroup()
-                .addContainerGap()
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(jLabel1)
-                        .add(18, 18, 18)
-                        .add(Equipe1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(R1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(R2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 48, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(Equipe2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jLabel2))
-                    .add(layout.createSequentialGroup()
-                        .add(33, 33, 33)
-                        .add(jSeparator2))
-                    .add(layout.createSequentialGroup()
-                        .add(340, 340, 340)
-                        .add(Valider)
-                        .add(0, 0, Short.MAX_VALUE)))
-                .add(16, 16, 16))
-            .add(layout.createSequentialGroup()
-                .add(25, 25, 25)
-                .add(btnRetour)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .add(23, 23, 23)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(Equipe1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel1)
-                    .add(Equipe2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel2)
-                    .add(R2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(R1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(Valider)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(19, 19, 19)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel3)
-                            .add(jLabel4))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(Tem_but, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(Jouer_id, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(Tem_but1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(Jouer_id1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(Tem_but2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(Jouer_id2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(Tem_but3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(Jouer_id3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(Tem_but4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(Jouer_id4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                    .add(layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel5)
-                            .add(jLabel6))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(Tem_but5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(Jouer_id5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(Tem_but6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(Jouer_id6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(Tem_but7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(Jouer_id7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(Tem_but8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(Jouer_id8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(Tem_but9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(Jouer_id9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 63, Short.MAX_VALUE)
-                .add(btnRetour)
-                .add(14, 14, 14))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/fond3.png"))); // NOI18N
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(4, 0, 1350, 690);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -885,6 +809,8 @@ public class AjouterResultat extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
