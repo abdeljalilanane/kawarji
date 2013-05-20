@@ -116,6 +116,11 @@ public class DashboardAdmin extends javax.swing.JFrame {
 
         addmatch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/ADDMATCH.png"))); // NOI18N
         addmatch.setText("jLabel3");
+        addmatch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addmatchMouseClicked(evt);
+            }
+        });
         getContentPane().add(addmatch);
         addmatch.setBounds(600, 460, 160, 60);
 
@@ -153,7 +158,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
 
     private void addfavoritMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addfavoritMouseClicked
         // TODO add your handling code here:
-         new AjouterFavorits().setVisible(true);
+         new AjouterFavorits1().setVisible(true);
     }//GEN-LAST:event_addfavoritMouseClicked
 
     private void addjoueurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addjoueurMouseClicked
@@ -165,6 +170,11 @@ public class DashboardAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
          new AjouterUtilisateur().setVisible(true);
     }//GEN-LAST:event_adduserMouseClicked
+
+    private void addmatchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addmatchMouseClicked
+        // TODO add your handling code here:
+        new AjouterResultat().setVisible(true);
+    }//GEN-LAST:event_addmatchMouseClicked
 
     /**
      * @param args the command line arguments

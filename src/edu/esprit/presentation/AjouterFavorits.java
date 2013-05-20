@@ -49,6 +49,8 @@ public class AjouterFavorits extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1366, 700));
+        setPreferredSize(new java.awt.Dimension(1366, 700));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -108,19 +110,19 @@ public class AjouterFavorits extends javax.swing.JFrame {
             {
                 id_Utilisateur_Field.setText(Integer.toString(e.getId_User()));
             
-            valider_button.setVisible(true);
-            btnModifier.setVisible(false);
+            validericon.setVisible(true);
+            Modifiericon.setVisible(false);
             }else
         if (e!=null) {
             id_Utilisateur_Field.setText(Integer.toString(e.getId_User()));
             
-            valider_button.setVisible(false);
-            btnModifier.setVisible(true);
+            validericon.setVisible(false);
+            Modifiericon.setVisible(true);
         }else
             
         {
-            valider_button.setVisible(true);
-            btnModifier.setVisible(false);
+            validericon.setVisible(true);
+            Modifiericon.setVisible(false);
             
         }
         for (int i = 0; i < equipes.size(); i++) {
@@ -141,6 +143,7 @@ public class AjouterFavorits extends javax.swing.JFrame {
         FavoritsDAO favoritsDAO = new FavoritsDAO();
         if(favoritsDAO.addFavorits(favorits) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
+            this.setVisible(false);
         }
     }//GEN-LAST:event_validericonMouseClicked
 

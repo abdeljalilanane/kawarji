@@ -67,7 +67,7 @@ try {
 mesg = new MimeMessage(session); 
  
 // Adresse From - Indiquer la provenance du message 
-mesg.setFrom(new InternetAddress("admin@kawarji.tn" )); 
+mesg.setFrom(new InternetAddress("abbjalil.anane@esprit.tn" )); 
  
 // Adresse TO. 
 InternetAddress toAddress = new InternetAddress(message_dest); 

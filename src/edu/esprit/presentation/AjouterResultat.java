@@ -75,9 +75,10 @@ public class AjouterResultat extends javax.swing.JFrame {
         Jouer_id9 = new javax.swing.JComboBox();
         R1 = new javax.swing.JSpinner();
         R2 = new javax.swing.JSpinner();
+        jSpinner1 = new javax.swing.JSpinner();
+        Retouricon1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1366, 760));
@@ -119,12 +120,12 @@ public class AjouterResultat extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Joueur");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(460, 240, 33, 14);
+        jLabel3.setBounds(460, 240, 60, 14);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Temp but");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(640, 240, 45, 14);
+        jLabel4.setBounds(640, 240, 70, 14);
 
         Tem_but.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -202,7 +203,7 @@ public class AjouterResultat extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Joueur");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(770, 240, 33, 14);
+        jLabel5.setBounds(770, 240, 50, 14);
 
         Jouer_id5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id5);
@@ -286,16 +287,36 @@ public class AjouterResultat extends javax.swing.JFrame {
         getContentPane().add(R2);
         R2.setBounds(719, 60, 50, 30);
 
+        jSpinner1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jSpinner1MouseClicked(evt);
+            }
+        });
+        jSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinner1StateChanged(evt);
+            }
+        });
+        getContentPane().add(jSpinner1);
+        jSpinner1.setBounds(889, 190, 50, 20);
+
+        Retouricon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/precident.png"))); // NOI18N
+        Retouricon1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Retouricon1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(Retouricon1);
+        Retouricon1.setBounds(10, 580, 160, 45);
+
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Temp but");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(930, 240, 45, 14);
+        jLabel6.setBounds(930, 240, 60, 14);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ajouterresultat.png"))); // NOI18N
         getContentPane().add(jLabel7);
         jLabel7.setBounds(4, 0, 1350, 690);
-        getContentPane().add(jSpinner1);
-        jSpinner1.setBounds(910, 190, 29, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -523,7 +544,7 @@ public class AjouterResultat extends javax.swing.JFrame {
         // TODO add your handling code here:
         int nb=0;
         
-        nb=Integer.getInteger(R1.getValue().toString());
+        nb=Integer.parseInt(R1.getValue().toString());
         if(nb==0)
         {
             jLabel3.setVisible(false);
@@ -621,7 +642,7 @@ public class AjouterResultat extends javax.swing.JFrame {
         // TODO add your handling code here:
            int nb=0;
         
-        nb=Integer.getInteger(R2.getValue().toString());
+        nb=Integer.parseInt(R2.getValue().toString());
         if(nb==0)
         {
             jLabel5.setVisible(false);
@@ -714,6 +735,28 @@ public class AjouterResultat extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_R2StateChanged
 
+    private void Retouricon1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Retouricon1MouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_Retouricon1MouseClicked
+
+    private void jSpinner1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSpinner1MouseClicked
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jSpinner1MouseClicked
+
+    private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
+        // TODO add your handling code here:
+         int nb=0;
+        
+       
+        nb=Integer.parseInt(jSpinner1.getValue().toString());
+        
+        System.out.println(nb);
+        
+        
+    }//GEN-LAST:event_jSpinner1StateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -763,6 +806,8 @@ public class AjouterResultat extends javax.swing.JFrame {
     private javax.swing.JComboBox Jouer_id9;
     private javax.swing.JSpinner R1;
     private javax.swing.JSpinner R2;
+    private javax.swing.JLabel Retouricon;
+    private javax.swing.JLabel Retouricon1;
     private javax.swing.JTextField Tem_but;
     private javax.swing.JTextField Tem_but1;
     private javax.swing.JTextField Tem_but2;

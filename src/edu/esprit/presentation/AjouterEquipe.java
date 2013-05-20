@@ -45,7 +45,6 @@ static Equipe e=null;
         jLabel4 = new javax.swing.JLabel();
         Flux_text = new javax.swing.JTextField();
         Modifiericon = new javax.swing.JLabel();
-        Retouricon = new javax.swing.JLabel();
         validericon = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -88,15 +87,6 @@ static Equipe e=null;
         });
         getContentPane().add(Modifiericon);
         Modifiericon.setBounds(560, 410, 160, 50);
-
-        Retouricon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/precident.png"))); // NOI18N
-        Retouricon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                RetouriconMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Retouricon);
-        Retouricon.setBounds(10, 580, 160, 45);
 
         validericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/valider.png"))); // NOI18N
         validericon.setText("jLabel11");
@@ -142,17 +132,13 @@ static Equipe e=null;
         }
     }//GEN-LAST:event_ModifiericonMouseClicked
 
-    private void RetouriconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RetouriconMouseClicked
-        // TODO add your handling code here:
-        this.setVisible(false);
-    }//GEN-LAST:event_RetouriconMouseClicked
-
     private void validericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validericonMouseClicked
         // TODO add your handling code here:
         Equipe equipe = new Equipe(nom_Field.getText(), entraineur_Field.getText(),Flux_text.getText());
         EquipeDAO employeDAO = new EquipeDAO();
         if(employeDAO.addEquipe(equipe) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
+            this.setVisible(false);
         }
     }//GEN-LAST:event_validericonMouseClicked
 
@@ -193,7 +179,6 @@ static Equipe e=null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Flux_text;
     private javax.swing.JLabel Modifiericon;
-    private javax.swing.JLabel Retouricon;
     private javax.swing.JTextField entraineur_Field;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -58,7 +58,6 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         Modifiericon = new javax.swing.JLabel();
         validericon = new javax.swing.JLabel();
-        Retouricon = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -134,7 +133,7 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Modifiericon);
-        Modifiericon.setBounds(560, 410, 160, 50);
+        Modifiericon.setBounds(550, 410, 160, 50);
 
         validericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/valider.png"))); // NOI18N
         validericon.setText("jLabel11");
@@ -144,16 +143,7 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
             }
         });
         getContentPane().add(validericon);
-        validericon.setBounds(530, 410, 160, 50);
-
-        Retouricon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/precident.png"))); // NOI18N
-        Retouricon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                RetouriconMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Retouricon);
-        Retouricon.setBounds(50, 650, 160, 45);
+        validericon.setBounds(550, 410, 160, 50);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ajouterutilisateur.png"))); // NOI18N
         getContentPane().add(jLabel9);
@@ -192,6 +182,7 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
         UtilisateurDAO utilisateurDAO = new UtilisateurDAO();
         if(utilisateurDAO.addUtilisateur(utilisateur) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
+            this.setVisible(false);
         }
     }//GEN-LAST:event_validericonMouseClicked
 
@@ -205,11 +196,6 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
             new AfficherUtilisateur().setVisible(true);
         }
     }//GEN-LAST:event_ModifiericonMouseClicked
-
-    private void RetouriconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RetouriconMouseClicked
-        // TODO add your handling code here:
-        this.setVisible(false);
-    }//GEN-LAST:event_RetouriconMouseClicked
 
     /**
      * @param args the command line arguments
@@ -249,7 +235,6 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
     private javax.swing.JTextField Email_Field;
     private javax.swing.JLabel Modifiericon;
     private javax.swing.JTextField Password_Field;
-    private javax.swing.JLabel Retouricon;
     private javax.swing.JComboBox Role_Field;
     private javax.swing.JTextField Tel_Field;
     private javax.swing.JLabel jLabel2;
