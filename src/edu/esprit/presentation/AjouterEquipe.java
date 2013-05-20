@@ -38,18 +38,20 @@ static Equipe e=null;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         nom_Field = new javax.swing.JTextField();
         entraineur_Field = new javax.swing.JTextField();
-        valider_button = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        btnModifier = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         Flux_text = new javax.swing.JTextField();
+        Modifiericon = new javax.swing.JLabel();
+        Retouricon = new javax.swing.JLabel();
+        validericon = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1366, 700));
+        setPreferredSize(new java.awt.Dimension(1366, 700));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -57,64 +59,62 @@ static Equipe e=null;
         });
         getContentPane().setLayout(null);
 
-        jLabel1.setText("Ajouter une equipe :");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 20, 99, 14);
-
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nom:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(84, 64, 25, 14);
+        jLabel2.setBounds(490, 170, 50, 14);
 
-        jLabel3.setText("entraineur:");
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Entraineur:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(55, 106, 54, 14);
+        jLabel3.setBounds(490, 230, 70, 14);
         getContentPane().add(nom_Field);
-        nom_Field.setBounds(119, 61, 206, 20);
+        nom_Field.setBounds(566, 160, 190, 30);
         getContentPane().add(entraineur_Field);
-        entraineur_Field.setBounds(119, 103, 206, 20);
+        entraineur_Field.setBounds(566, 220, 190, 30);
 
-        valider_button.setText("Valider");
-        valider_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                valider_buttonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(valider_button);
-        valider_button.setBounds(260, 223, 65, 23);
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(10, 264, 121, 37);
-
-        btnModifier.setText("Modifier");
-        btnModifier.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModifierActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnModifier);
-        btnModifier.setBounds(183, 223, 71, 23);
-
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Flux :");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(82, 137, 27, 14);
+        jLabel4.setBounds(490, 290, 50, 14);
         getContentPane().add(Flux_text);
-        Flux_text.setBounds(119, 134, 206, 20);
+        Flux_text.setBounds(566, 280, 190, 30);
+
+        Modifiericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/modifier.png"))); // NOI18N
+        Modifiericon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ModifiericonMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Modifiericon);
+        Modifiericon.setBounds(560, 410, 160, 50);
+
+        Retouricon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/precident.png"))); // NOI18N
+        Retouricon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RetouriconMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Retouricon);
+        Retouricon.setBounds(10, 580, 160, 45);
+
+        validericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/valider.png"))); // NOI18N
+        validericon.setText("jLabel11");
+        validericon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                validericonMouseClicked(evt);
+            }
+        });
+        getContentPane().add(validericon);
+        validericon.setBounds(560, 410, 160, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ajouterequipe.png"))); // NOI18N
+        jLabel1.setText("Ajouter une equipe :");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1350, 690);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        new DashboardAdmin().setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
@@ -122,26 +122,16 @@ static Equipe e=null;
             nom_Field.setText(e.getNom());
             entraineur_Field.setText(e.getEntraineur());
             Flux_text.setText(e.getFlux());
-            valider_button.setVisible(false);
-            btnModifier.setVisible(true);
+            validericon.setVisible(false);
+            Modifiericon.setVisible(true);
         }else
         {
-            valider_button.setVisible(true);
-            btnModifier.setVisible(false);
+            validericon.setVisible(true);
+            Modifiericon.setVisible(false);
         }
     }//GEN-LAST:event_formWindowOpened
 
-    private void valider_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valider_buttonActionPerformed
-        // TODO add your handling code here:
-        
-        Equipe equipe = new Equipe(nom_Field.getText(), entraineur_Field.getText(),Flux_text.getText());
-        EquipeDAO employeDAO = new EquipeDAO();
-        if(employeDAO.addEquipe(equipe) != 0){
-            JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
-        }
-    }//GEN-LAST:event_valider_buttonActionPerformed
-
-    private void btnModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierActionPerformed
+    private void ModifiericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModifiericonMouseClicked
         // TODO add your handling code here:
         Equipe equipe = new Equipe(e.getId(),nom_Field.getText(), entraineur_Field.getText(),Flux_text.getText());
         EquipeDAO employeDAO = new EquipeDAO();
@@ -150,7 +140,21 @@ static Equipe e=null;
             this.setVisible(false);
             new AfficherEquipe().setVisible(true);
         }
-    }//GEN-LAST:event_btnModifierActionPerformed
+    }//GEN-LAST:event_ModifiericonMouseClicked
+
+    private void RetouriconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RetouriconMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_RetouriconMouseClicked
+
+    private void validericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validericonMouseClicked
+        // TODO add your handling code here:
+        Equipe equipe = new Equipe(nom_Field.getText(), entraineur_Field.getText(),Flux_text.getText());
+        EquipeDAO employeDAO = new EquipeDAO();
+        if(employeDAO.addEquipe(equipe) != 0){
+            JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
+        }
+    }//GEN-LAST:event_validericonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -188,14 +192,14 @@ static Equipe e=null;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Flux_text;
-    private javax.swing.JButton btnModifier;
+    private javax.swing.JLabel Modifiericon;
+    private javax.swing.JLabel Retouricon;
     private javax.swing.JTextField entraineur_Field;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField nom_Field;
-    private javax.swing.JButton valider_button;
+    private javax.swing.JLabel validericon;
     // End of variables declaration//GEN-END:variables
 }

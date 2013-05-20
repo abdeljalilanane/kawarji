@@ -90,6 +90,8 @@ public class DashboardUser extends javax.swing.JFrame {
 
         jScrollPane3 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
+        user = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         play = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -100,8 +102,6 @@ public class DashboardUser extends javax.swing.JFrame {
         R1 = new javax.swing.JLabel();
         R2 = new javax.swing.JLabel();
         R = new javax.swing.JLabel();
-        user = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         news = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         fond = new javax.swing.JLabel();
@@ -117,6 +117,15 @@ public class DashboardUser extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(1350, 690));
         setMinimumSize(new java.awt.Dimension(1350, 700));
         getContentPane().setLayout(null);
+
+        user.setText("Nom Prenom");
+        getContentPane().add(user);
+        user.setBounds(1020, 40, 190, 20);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/profile/nom.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(1010, 30, 160, 41);
 
         play.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/play.png"))); // NOI18N
         play.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -175,15 +184,6 @@ public class DashboardUser extends javax.swing.JFrame {
         R.setText("jLabel3");
         getContentPane().add(R);
         R.setBounds(130, 230, 540, 90);
-
-        user.setText("Nom Prenom");
-        getContentPane().add(user);
-        user.setBounds(1050, 180, 190, 20);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/profile/nom.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(1010, 170, 160, 41);
 
         news.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(news);

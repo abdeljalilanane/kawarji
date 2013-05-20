@@ -30,6 +30,7 @@ public class tachkila extends javax.swing.JFrame {
     equipe=eDAO.readAllJoueursParEquipe(id_equipe);
     if(id_equipe==2)
     {
+        fond.setVisible(false);
     jLabel1.setText(equipe.get(0).getPrenom()); 
     jLabel2.setText(equipe.get(1).getPrenom());
     jLabel3.setText(equipe.get(2).getPrenom()); 
@@ -39,13 +40,14 @@ public class tachkila extends javax.swing.JFrame {
     jLabel7.setText(equipe.get(6).getPrenom()); 
     jLabel8.setText(equipe.get(7).getPrenom());
     jLabel9.setText(equipe.get(8).getPrenom());
-    jLabel10.setText(equipe.get(9).getPrenom()); 
+    jLabel12.setText(equipe.get(9).getPrenom()); 
     jLabel11.setText(equipe.get(10).getPrenom());
+    jLabel10.setVisible(false);
     }
     else
         if(id_equipe==1)
         {
-            fond.setVisible(false);
+            fond1.setVisible(false);
     jLabel1.setText(equipe.get(0).getPrenom()); 
     jLabel2.setText(equipe.get(1).getPrenom());
     jLabel3.setText(equipe.get(2).getPrenom()); 
@@ -57,6 +59,7 @@ public class tachkila extends javax.swing.JFrame {
     jLabel9.setText(equipe.get(8).getPrenom());
     jLabel10.setText(equipe.get(9).getPrenom()); 
     jLabel11.setText(equipe.get(10).getPrenom());
+    jLabel12.setVisible(false);
         }
     }
 
@@ -69,6 +72,7 @@ public class tachkila extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -80,6 +84,7 @@ public class tachkila extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         fond = new javax.swing.JLabel();
         fond1 = new javax.swing.JLabel();
 
@@ -88,49 +93,62 @@ public class tachkila extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1366, 700));
         getContentPane().setLayout(null);
 
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour2.png"))); // NOI18N
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(1240, 30, 40, 40);
+
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(170, 280, 34, 14);
+        jLabel1.setBounds(170, 280, 70, 14);
 
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(380, 60, 34, 14);
+        jLabel2.setBounds(380, 60, 80, 14);
 
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(370, 240, 34, 14);
+        jLabel3.setBounds(370, 240, 90, 14);
 
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(390, 420, 34, 14);
+        jLabel4.setBounds(390, 420, 80, 14);
 
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(390, 550, 34, 14);
+        jLabel5.setBounds(390, 550, 80, 14);
 
         jLabel6.setText("jLabel6");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(660, 120, 34, 14);
+        jLabel6.setBounds(660, 120, 80, 14);
 
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(660, 270, 34, 14);
+        jLabel7.setBounds(660, 270, 80, 14);
 
         jLabel8.setText("jLabel8");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(670, 470, 34, 14);
+        jLabel8.setBounds(670, 490, 80, 14);
 
         jLabel9.setText("jLabel9");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(670, 560, 34, 14);
+        jLabel9.setBounds(670, 560, 80, 14);
 
         jLabel10.setText("jLabel10");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(900, 200, 40, 14);
+        jLabel10.setBounds(900, 200, 80, 14);
 
         jLabel11.setText("jLabel11");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(900, 380, 40, 14);
+        jLabel11.setBounds(900, 380, 80, 14);
+
+        jLabel12.setText("jLabel12");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(1120, 390, 90, 14);
 
         fond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/442.png"))); // NOI18N
         fond.setText("jLabel1");
@@ -147,6 +165,11 @@ public class tachkila extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel13MouseClicked
 
     /**
      * @param args the command line arguments
@@ -188,6 +211,8 @@ public class tachkila extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

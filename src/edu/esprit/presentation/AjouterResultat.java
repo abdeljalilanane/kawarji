@@ -45,7 +45,6 @@ public class AjouterResultat extends javax.swing.JFrame {
     private void initComponents() {
 
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel8 = new javax.swing.JLabel();
         Equipe1 = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         Equipe2 = new javax.swing.JComboBox();
@@ -78,7 +77,6 @@ public class AjouterResultat extends javax.swing.JFrame {
         Tem_but9 = new javax.swing.JTextField();
         Jouer_id9 = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
-        btnRetour = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,25 +88,23 @@ public class AjouterResultat extends javax.swing.JFrame {
         });
         getContentPane().setLayout(null);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(170, 340, 130, 50);
-
         Equipe1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Equipe ::." }));
         getContentPane().add(Equipe1);
-        Equipe1.setBounds(69, 23, 149, 20);
+        Equipe1.setBounds(470, 80, 149, 20);
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Equipe 1");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 26, 41, 14);
+        jLabel1.setBounds(410, 80, 41, 14);
 
         Equipe2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Equipe ::." }));
         getContentPane().add(Equipe2);
-        Equipe2.setBounds(441, 23, 149, 20);
+        Equipe2.setBounds(800, 80, 149, 20);
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Equipe 2");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(594, 26, 41, 14);
+        jLabel2.setBounds(960, 80, 41, 14);
 
         R1.setEditor(new javax.swing.JSpinner.NumberEditor(R1, ""));
         R1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -119,14 +115,14 @@ public class AjouterResultat extends javax.swing.JFrame {
         R1.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 R1AncestorAdded(evt);
             }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
         });
         getContentPane().add(R1);
-        R1.setBounds(224, 23, 60, 30);
+        R1.setBounds(630, 80, 40, 20);
 
         R2.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -134,9 +130,9 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(R2);
-        R2.setBounds(383, 23, 48, 20);
+        R2.setBounds(718, 80, 40, 20);
         getContentPane().add(jSeparator2);
-        jSeparator2.setBounds(43, 83, 592, 2);
+        jSeparator2.setBounds(410, 130, 592, 2);
 
         Valider.setText("Valider");
         Valider.addActionListener(new java.awt.event.ActionListener() {
@@ -145,15 +141,17 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Valider);
-        Valider.setBounds(350, 54, 65, 23);
+        Valider.setBounds(700, 150, 65, 23);
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Joueur");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(130, 104, 33, 14);
+        jLabel3.setBounds(460, 240, 33, 14);
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Temp but");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(307, 104, 45, 14);
+        jLabel4.setBounds(640, 240, 45, 14);
 
         Tem_but.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -166,11 +164,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but);
-        Tem_but.setBounds(246, 129, 81, 20);
+        Tem_but.setBounds(620, 270, 81, 20);
 
         Jouer_id.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id);
-        Jouer_id.setBounds(50, 129, 144, 20);
+        Jouer_id.setBounds(420, 270, 144, 20);
 
         Tem_but1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -178,11 +176,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but1);
-        Tem_but1.setBounds(246, 160, 81, 20);
+        Tem_but1.setBounds(620, 300, 81, 20);
 
         Jouer_id1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id1);
-        Jouer_id1.setBounds(50, 160, 144, 20);
+        Jouer_id1.setBounds(420, 300, 144, 20);
 
         Tem_but2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -190,11 +188,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but2);
-        Tem_but2.setBounds(246, 191, 81, 20);
+        Tem_but2.setBounds(620, 330, 81, 20);
 
         Jouer_id2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id2);
-        Jouer_id2.setBounds(50, 191, 144, 20);
+        Jouer_id2.setBounds(420, 330, 144, 20);
 
         Tem_but3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -202,11 +200,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but3);
-        Tem_but3.setBounds(246, 222, 81, 20);
+        Tem_but3.setBounds(620, 360, 81, 20);
 
         Jouer_id3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id3);
-        Jouer_id3.setBounds(50, 222, 144, 20);
+        Jouer_id3.setBounds(420, 360, 144, 20);
 
         Tem_but4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -214,11 +212,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but4);
-        Tem_but4.setBounds(246, 248, 81, 20);
+        Tem_but4.setBounds(620, 390, 81, 20);
 
         Jouer_id4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id4);
-        Jouer_id4.setBounds(50, 248, 144, 20);
+        Jouer_id4.setBounds(420, 390, 144, 20);
 
         Tem_but5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -226,15 +224,16 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but5);
-        Tem_but5.setBounds(546, 129, 81, 20);
+        Tem_but5.setBounds(920, 270, 81, 20);
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Joueur");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(405, 104, 33, 14);
+        jLabel5.setBounds(770, 240, 33, 14);
 
         Jouer_id5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id5);
-        Jouer_id5.setBounds(356, 129, 144, 20);
+        Jouer_id5.setBounds(730, 270, 144, 20);
 
         Tem_but6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -242,11 +241,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but6);
-        Tem_but6.setBounds(546, 160, 81, 20);
+        Tem_but6.setBounds(920, 300, 81, 20);
 
         Jouer_id6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id6);
-        Jouer_id6.setBounds(356, 160, 144, 20);
+        Jouer_id6.setBounds(730, 300, 144, 20);
 
         Tem_but7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -254,11 +253,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but7);
-        Tem_but7.setBounds(546, 191, 81, 20);
+        Tem_but7.setBounds(920, 330, 81, 20);
 
         Jouer_id7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id7);
-        Jouer_id7.setBounds(356, 191, 144, 20);
+        Jouer_id7.setBounds(730, 330, 144, 20);
 
         Tem_but8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -271,11 +270,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but8);
-        Tem_but8.setBounds(546, 222, 81, 20);
+        Tem_but8.setBounds(920, 360, 81, 20);
 
         Jouer_id8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id8);
-        Jouer_id8.setBounds(356, 222, 144, 20);
+        Jouer_id8.setBounds(730, 360, 144, 20);
 
         Tem_but9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -283,28 +282,18 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but9);
-        Tem_but9.setBounds(546, 248, 81, 20);
+        Tem_but9.setBounds(920, 390, 81, 20);
 
         Jouer_id9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id9);
-        Jouer_id9.setBounds(356, 248, 144, 20);
+        Jouer_id9.setBounds(730, 390, 144, 20);
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Temp but");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(582, 104, 45, 14);
+        jLabel6.setBounds(930, 240, 45, 14);
 
-        btnRetour.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
-        btnRetour.setBorder(null);
-        btnRetour.setOpaque(false);
-        btnRetour.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRetourActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnRetour);
-        btnRetour.setBounds(25, 331, 130, 60);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/fond3.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ajouterresultat.png"))); // NOI18N
         getContentPane().add(jLabel7);
         jLabel7.setBounds(4, 0, 1350, 690);
 
@@ -638,12 +627,6 @@ public class AjouterResultat extends javax.swing.JFrame {
         Jouer_id2.setVisible(false);}
     }//GEN-LAST:event_Tem_but2MouseExited
 
-    private void btnRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetourActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        new DashboardAdmin().setVisible(true);
-    }//GEN-LAST:event_btnRetourActionPerformed
-
     private void Tem_but5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tem_but5MouseExited
         // TODO add your handling code here:
         if(Tem_but5.getText().equals("")==false)
@@ -802,7 +785,6 @@ public class AjouterResultat extends javax.swing.JFrame {
     private javax.swing.JTextField Tem_but8;
     private javax.swing.JTextField Tem_but9;
     private javax.swing.JButton Valider;
-    private javax.swing.JButton btnRetour;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -810,7 +792,6 @@ public class AjouterResultat extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables

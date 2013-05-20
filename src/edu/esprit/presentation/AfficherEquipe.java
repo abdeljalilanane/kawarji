@@ -34,113 +34,71 @@ public class AfficherEquipe extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ListeEquipe = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        bntModifier = new javax.swing.JButton();
-        Btnsupprimer = new javax.swing.JButton();
+        supprimericon = new javax.swing.JLabel();
+        Modifiericon = new javax.swing.JLabel();
+        Retouricon = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1366, 700));
+        setPreferredSize(new java.awt.Dimension(1366, 700));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setText("Liste Equipe");
+        getContentPane().setLayout(null);
 
         ListeEquipe.setModel(new edu.esprit.presentation.EquipeTableModel());
         jScrollPane1.setViewportView(ListeEquipe);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(20, 241, 1310, 310);
+
+        supprimericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/supprimer.png"))); // NOI18N
+        supprimericon.setText("jLabel11");
+        supprimericon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                supprimericonMouseClicked(evt);
             }
         });
+        getContentPane().add(supprimericon);
+        supprimericon.setBounds(1180, 580, 160, 50);
 
-        bntModifier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/modifier.png"))); // NOI18N
-        bntModifier.setBorder(null);
-        bntModifier.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bntModifierActionPerformed(evt);
+        Modifiericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/modifier.png"))); // NOI18N
+        Modifiericon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ModifiericonMouseClicked(evt);
             }
         });
+        getContentPane().add(Modifiericon);
+        Modifiericon.setBounds(1010, 580, 160, 50);
 
-        Btnsupprimer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Supprmer.png"))); // NOI18N
-        Btnsupprimer.setBorder(null);
-        Btnsupprimer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnsupprimerActionPerformed(evt);
+        Retouricon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/precident.png"))); // NOI18N
+        Retouricon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RetouriconMouseClicked(evt);
             }
         });
+        getContentPane().add(Retouricon);
+        Retouricon.setBounds(10, 580, 160, 45);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jButton1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(727, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Btnsupprimer)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bntModifier)
-                .addGap(31, 31, 31))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 357, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bntModifier)
-                    .addComponent(Btnsupprimer))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/listeequipe.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1370, 700);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        new DashboardAdmin().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
        // entreprise_name.setText(e.getLibelle_entreprise());
     }//GEN-LAST:event_formWindowOpened
 
-    private void bntModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntModifierActionPerformed
-        // TODO add your handling code here:
-        int id = Integer.parseInt(ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),0).toString());
-        String nom=ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),1).toString();
-        String Entrenaire=ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),2).toString();
-        String Flux=ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),3).toString();
-        Equipe e=new Equipe(id, nom, Entrenaire,Flux);
-        this.setVisible(false);
-        new AjouterEquipe(e).setVisible(true);
-    }//GEN-LAST:event_bntModifierActionPerformed
-
-    private void BtnsupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnsupprimerActionPerformed
+    private void supprimericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supprimericonMouseClicked
         // TODO add your handling code here:
         int id = Integer.parseInt(ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),0).toString());
         String nom=ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),1).toString();
@@ -155,7 +113,23 @@ public class AfficherEquipe extends javax.swing.JFrame {
 
         }
         
-    }//GEN-LAST:event_BtnsupprimerActionPerformed
+    }//GEN-LAST:event_supprimericonMouseClicked
+
+    private void ModifiericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModifiericonMouseClicked
+        // TODO add your handling code here:
+        int id = Integer.parseInt(ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),0).toString());
+        String nom=ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),1).toString();
+        String Entrenaire=ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),2).toString();
+        String Flux=ListeEquipe.getValueAt(ListeEquipe.getSelectedRow(),3).toString();
+        Equipe e=new Equipe(id, nom, Entrenaire,Flux);
+        this.setVisible(false);
+        new AjouterEquipe(e).setVisible(true);
+    }//GEN-LAST:event_ModifiericonMouseClicked
+
+    private void RetouriconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RetouriconMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_RetouriconMouseClicked
 
     /**
      * @param args the command line arguments
@@ -192,11 +166,11 @@ public class AfficherEquipe extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btnsupprimer;
     private javax.swing.JTable ListeEquipe;
-    private javax.swing.JButton bntModifier;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel Modifiericon;
+    private javax.swing.JLabel Retouricon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel supprimericon;
     // End of variables declaration//GEN-END:variables
 }

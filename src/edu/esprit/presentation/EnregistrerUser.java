@@ -15,17 +15,17 @@ import javax.swing.JOptionPane;
  *
  * @author Wael Mallek
  */
-public class AjouterUtilisateur extends javax.swing.JFrame {
+public class EnregistrerUser extends javax.swing.JFrame {
  static Utilisateur user=null;
     
     /**
      * Creates new form AjouterUtilisateur
      */
-    public AjouterUtilisateur() {
+    public EnregistrerUser() {
         initComponents();
     }
 
-    AjouterUtilisateur(Utilisateur e) {
+    EnregistrerUser(Utilisateur e) {
         initComponents();
         user=e;
         
@@ -46,8 +46,6 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         nom_Field = new javax.swing.JTextField();
         prenom_Field = new javax.swing.JTextField();
-        Role_Field = new javax.swing.JComboBox();
-        jLabel4 = new javax.swing.JLabel();
         Email_Field = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         Tel_Field = new javax.swing.JTextField();
@@ -56,7 +54,6 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         Password_Field = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        Modifiericon = new javax.swing.JLabel();
         validericon = new javax.swing.JLabel();
         Retouricon = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -89,15 +86,6 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
         nom_Field.setBounds(586, 110, 170, 30);
         getContentPane().add(prenom_Field);
         prenom_Field.setBounds(586, 150, 170, 30);
-
-        Role_Field.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Admin", "User" }));
-        getContentPane().add(Role_Field);
-        Role_Field.setBounds(586, 360, 170, 20);
-
-        jLabel4.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel4.setText("Role :");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(520, 360, 50, 14);
         getContentPane().add(Email_Field);
         Email_Field.setBounds(586, 190, 170, 30);
 
@@ -127,15 +115,6 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
         getContentPane().add(jLabel8);
         jLabel8.setBounds(490, 320, 90, 14);
 
-        Modifiericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/modifier.png"))); // NOI18N
-        Modifiericon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ModifiericonMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Modifiericon);
-        Modifiericon.setBounds(560, 410, 160, 50);
-
         validericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/valider.png"))); // NOI18N
         validericon.setText("jLabel11");
         validericon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -153,7 +132,7 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Retouricon);
-        Retouricon.setBounds(50, 650, 160, 45);
+        Retouricon.setBounds(50, 580, 160, 45);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ajouterutilisateur.png"))); // NOI18N
         getContentPane().add(jLabel9);
@@ -173,11 +152,11 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
             login_Field.setText(user.getUserName());
             Password_Field.setText(user.getPassword());
             validericon.setVisible(false);
-            Modifiericon.setVisible(true);
+           
         }else
         {
             validericon.setVisible(true);
-            Modifiericon.setVisible(false);
+          
         }
        
     }//GEN-LAST:event_formWindowOpened
@@ -188,23 +167,16 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
 
     private void validericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validericonMouseClicked
         // TODO add your handling code here:
-         Utilisateur utilisateur = new Utilisateur(nom_Field.getText(), prenom_Field.getText(),Role_Field.getSelectedItem().toString(),login_Field.getText(),Password_Field.getText(),Email_Field.getText(),Tel_Field.getText());
+        if (nom_Field.getText().equals("")&&login_Field.getText().equals("")&&Password_Field.getText().equals("")&&Email_Field.getText().equals("")&&Tel_Field.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "SVP Remplire tous les champs de saisir!!!!");
+        }else{
+         Utilisateur utilisateur = new Utilisateur(nom_Field.getText(), prenom_Field.getText(),"User",login_Field.getText(),Password_Field.getText(),Email_Field.getText(),Tel_Field.getText());
         UtilisateurDAO utilisateurDAO = new UtilisateurDAO();
         if(utilisateurDAO.addUtilisateur(utilisateur) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
-        }
-    }//GEN-LAST:event_validericonMouseClicked
-
-    private void ModifiericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModifiericonMouseClicked
-        // TODO add your handling code here:
-        Utilisateur equipe = new Utilisateur(user.getId(), user.getNom(), user.getPrenom(), Role_Field.getSelectedItem().toString(), user.getMail(), user.getTel(), user.getUserName(), user.getPassword());
-        UtilisateurDAO employeDAO = new UtilisateurDAO();
-        if(employeDAO.updateUtilisateur(equipe)){
-            JOptionPane.showMessageDialog(this, "Modification effectué avec succès !");
             this.setVisible(false);
-            new AfficherUtilisateur().setVisible(true);
-        }
-    }//GEN-LAST:event_ModifiericonMouseClicked
+        }}
+    }//GEN-LAST:event_validericonMouseClicked
 
     private void RetouriconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RetouriconMouseClicked
         // TODO add your handling code here:
@@ -228,33 +200,30 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AjouterUtilisateur.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EnregistrerUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AjouterUtilisateur.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EnregistrerUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AjouterUtilisateur.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EnregistrerUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AjouterUtilisateur.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EnregistrerUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AjouterUtilisateur().setVisible(true);
+                new EnregistrerUser().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Email_Field;
-    private javax.swing.JLabel Modifiericon;
     private javax.swing.JTextField Password_Field;
     private javax.swing.JLabel Retouricon;
-    private javax.swing.JComboBox Role_Field;
     private javax.swing.JTextField Tel_Field;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

@@ -15,6 +15,7 @@ import edu.esprit.entite.Utilisateur;
 import edu.esprit.presentation.AjouterUtilisateur;
 import edu.esprit.presentation.DashboardAdmin;
 import edu.esprit.presentation.DashboardUser;
+import edu.esprit.presentation.EnregistrerUser;
 import edu.esprit.presentation.EnvoiMail;
 import java.awt.BorderLayout;
 import java.io.IOException;
@@ -59,9 +60,7 @@ public static boolean secondRequestDone = false;
         initComponents();
         
         
-        fond.setSize(1021, 436);
-        this.add(fond, BorderLayout.CENTER);
-        this.pack();
+        
     }
     
     
@@ -77,17 +76,18 @@ public static boolean secondRequestDone = false;
     private void initComponents() {
 
         jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         TXT_Login = new javax.swing.JTextField();
         TXT_MotPass = new javax.swing.JPasswordField();
+        ConnecterButtan = new javax.swing.JLabel();
+        Enregistrerbuttan = new javax.swing.JLabel();
         fond = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
-        setMinimumSize(new java.awt.Dimension(1021, 436));
+        setMaximumSize(new java.awt.Dimension(1366, 700));
+        setMinimumSize(new java.awt.Dimension(1366, 700));
         getContentPane().setLayout(null);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/fb.png"))); // NOI18N
@@ -99,38 +99,17 @@ public static boolean secondRequestDone = false;
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(380, 240, 60, 50);
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/login.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(280, 230, 97, 29);
-
-        jButton1.setBackground(new java.awt.Color(255, 144, 67));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/signup.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(280, 270, 100, 30);
+        jButton3.setBounds(220, 450, 60, 50);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setText("Password");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(110, 200, 90, 30);
+        jLabel1.setBounds(250, 390, 90, 30);
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel2.setText("Login");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(150, 160, 80, 30);
+        jLabel2.setBounds(290, 340, 80, 30);
 
         TXT_Login.setToolTipText("");
         TXT_Login.addActionListener(new java.awt.event.ActionListener() {
@@ -139,16 +118,31 @@ public static boolean secondRequestDone = false;
             }
         });
         getContentPane().add(TXT_Login);
-        TXT_Login.setBounds(220, 160, 220, 28);
+        TXT_Login.setBounds(400, 340, 220, 30);
         getContentPane().add(TXT_MotPass);
-        TXT_MotPass.setBounds(220, 200, 220, 28);
+        TXT_MotPass.setBounds(400, 390, 220, 30);
 
-        fond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/1192805705_1024x768_football-on-the-grass copie.jpg"))); // NOI18N
-        fond.setMaximumSize(new java.awt.Dimension(923, 435));
-        fond.setMinimumSize(new java.awt.Dimension(923, 435));
-        fond.setPreferredSize(new java.awt.Dimension(923, 435));
+        ConnecterButtan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/connecter.png"))); // NOI18N
+        ConnecterButtan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConnecterButtanMouseClicked(evt);
+            }
+        });
+        getContentPane().add(ConnecterButtan);
+        ConnecterButtan.setBounds(430, 430, 160, 50);
+
+        Enregistrerbuttan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/enregistrer.png"))); // NOI18N
+        Enregistrerbuttan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EnregistrerbuttanMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Enregistrerbuttan);
+        Enregistrerbuttan.setBounds(430, 480, 160, 50);
+
+        fond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/loginf.png"))); // NOI18N
         getContentPane().add(fond);
-        fond.setBounds(0, 0, 1020, 435);
+        fond.setBounds(0, 0, 1370, 700);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -156,50 +150,6 @@ public static boolean secondRequestDone = false;
     private void TXT_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_LoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TXT_LoginActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // Login 
-        
-       String login = TXT_Login.getText();
-       String pass =new String( TXT_MotPass.getPassword());
-       
-       
-       Utilisateur u = new Utilisateur();
-       UtilisateurDAO dao = new UtilisateurDAO();
-       //u = dao.checkUser(login, pass);
-       u = dao.checklogin(login);
-       System.out.println(u.getRole());
-       
-        if (u.getRole()==null) {
-            this.setVisible(false);
-            new AjouterUtilisateur().setVisible(true);
-        } else {
-            if (u.getPassword().equals(pass)) {
-                
-                if (u.getRole().equals("Admin") ){
-                    this.setVisible(false);
-                    new DashboardAdmin().setVisible(true);
-                } else if (u.getRole().equals("User") ){
-                    this.setVisible(false);
-                    new DashboardUser(u).setVisible(true);
-                } 
-                
-            } else {
-                mail env = new mail(u); 
-                env.envoyerMail();
-                System.out.println("Un mail a été envoyer :)");
-                JOptionPane.showMessageDialog(this, "Votre mot de pass est éroné \nUn Mail a été envoyer ");
-            }
-                        
-        }
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-            new AjouterUtilisateur().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
@@ -289,6 +239,49 @@ authFrame.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void ConnecterButtanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConnecterButtanMouseClicked
+        // TODO add your handling code here:
+         String login = TXT_Login.getText();
+       String pass =new String( TXT_MotPass.getPassword());
+       
+       
+       Utilisateur u = new Utilisateur();
+       UtilisateurDAO dao = new UtilisateurDAO();
+       //u = dao.checkUser(login, pass);
+       u = dao.checklogin(login);
+       System.out.println(u.getRole());
+       
+        if (u.getRole()==null) {
+            this.setVisible(false);
+            new AjouterUtilisateur().setVisible(true);
+        } else {
+            if (u.getPassword().equals(pass)) {
+                
+                if (u.getRole().equals("Admin") ){
+                    this.setVisible(false);
+                    new DashboardAdmin().setVisible(true);
+                } else if (u.getRole().equals("User") ){
+                    this.setVisible(false);
+                    new DashboardUser(u).setVisible(true);
+                } 
+                
+            } else {
+                mail env = new mail(u); 
+                env.envoyerMail();
+                System.out.println("Un mail a été envoyer :)");
+                JOptionPane.showMessageDialog(this, "Votre mot de pass est éroné \nUn Mail a été envoyer ");
+            }
+                        
+        }
+        
+    }//GEN-LAST:event_ConnecterButtanMouseClicked
+
+    private void EnregistrerbuttanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EnregistrerbuttanMouseClicked
+        // TODO add your handling code here:
+            //this.setVisible(false);
+            new EnregistrerUser().setVisible(true);
+    }//GEN-LAST:event_EnregistrerbuttanMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -324,11 +317,11 @@ authFrame.setVisible(true);
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ConnecterButtan;
+    private javax.swing.JLabel Enregistrerbuttan;
     private javax.swing.JTextField TXT_Login;
     private javax.swing.JPasswordField TXT_MotPass;
     private javax.swing.JLabel fond;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

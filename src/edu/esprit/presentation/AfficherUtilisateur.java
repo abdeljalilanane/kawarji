@@ -34,14 +34,15 @@ public class AfficherUtilisateur extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ListeUtilisateur = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        bntModifier = new javax.swing.JButton();
-        Btnsupprimer = new javax.swing.JButton();
+        supprimericon = new javax.swing.JLabel();
+        Modifiericon = new javax.swing.JLabel();
+        Retouricon = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1366, 700));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -49,75 +50,54 @@ public class AfficherUtilisateur extends javax.swing.JFrame {
         });
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setText("Liste Utilisateurs");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 11, 101, 15);
-
         ListeUtilisateur.setModel(new edu.esprit.presentation.UtilisateurTableModel());
         jScrollPane1.setViewportView(ListeUtilisateur);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(14, 156, 609, 191);
+        jScrollPane1.setBounds(20, 201, 1320, 330);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        supprimericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/supprimer.png"))); // NOI18N
+        supprimericon.setText("jLabel11");
+        supprimericon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                supprimericonMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(10, 365, 121, 37);
+        getContentPane().add(supprimericon);
+        supprimericon.setBounds(1180, 580, 160, 50);
 
-        bntModifier.setText("Modifier");
-        bntModifier.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bntModifierActionPerformed(evt);
+        Modifiericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/modifier.png"))); // NOI18N
+        Modifiericon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ModifiericonMouseClicked(evt);
             }
         });
-        getContentPane().add(bntModifier);
-        bntModifier.setBounds(531, 115, 71, 23);
+        getContentPane().add(Modifiericon);
+        Modifiericon.setBounds(1010, 580, 160, 50);
 
-        Btnsupprimer.setText("Supprimer");
-        Btnsupprimer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnsupprimerActionPerformed(evt);
+        Retouricon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/precident.png"))); // NOI18N
+        Retouricon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RetouriconMouseClicked(evt);
             }
         });
-        getContentPane().add(Btnsupprimer);
-        Btnsupprimer.setBounds(440, 115, 81, 23);
+        getContentPane().add(Retouricon);
+        Retouricon.setBounds(10, 580, 160, 45);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/listeutilisateurn.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1350, 690);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        new DashboardAdmin().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
        // entreprise_name.setText(e.getLibelle_entreprise());
     }//GEN-LAST:event_formWindowOpened
 
-    private void bntModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntModifierActionPerformed
-        // TODO add your handling code here:
-        int id = Integer.parseInt(ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),0).toString());
-        String Nom=ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),1).toString();
-        String Prenom=ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),2).toString();
-        String Role=ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),3).toString();
-        String mail=ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),4).toString();
-        String Tel =ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),5).toString();
-        String Login =ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),6).toString();
-        String Mopasse=ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),7).toString();
-        Utilisateur user=new Utilisateur(id,Nom,Prenom,Role,mail,Tel,Login,Mopasse);
-        this.setVisible(false);
-        new AjouterUtilisateur(user).setVisible(true);
-    }//GEN-LAST:event_bntModifierActionPerformed
-
-    private void BtnsupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnsupprimerActionPerformed
+    private void supprimericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supprimericonMouseClicked
         // TODO add your handling code here:
         int id = Integer.parseInt(ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),0).toString());
         String Nom=ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),1).toString();
@@ -135,8 +115,27 @@ public class AfficherUtilisateur extends javax.swing.JFrame {
             ListeUtilisateur.setModel(new edu.esprit.presentation.UtilisateurTableModel());
 
         }
-        
-    }//GEN-LAST:event_BtnsupprimerActionPerformed
+    }//GEN-LAST:event_supprimericonMouseClicked
+
+    private void ModifiericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModifiericonMouseClicked
+        // TODO add your handling code here:
+         int id = Integer.parseInt(ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),0).toString());
+        String Nom=ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),1).toString();
+        String Prenom=ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),2).toString();
+        String Role=ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),3).toString();
+        String mail=ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),4).toString();
+        String Tel =ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),5).toString();
+        String Login =ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),6).toString();
+        String Mopasse=ListeUtilisateur.getValueAt(ListeUtilisateur.getSelectedRow(),7).toString();
+        Utilisateur user=new Utilisateur(id,Nom,Prenom,Role,mail,Tel,Login,Mopasse);
+        this.setVisible(false);
+        new AjouterUtilisateur(user).setVisible(true);
+    }//GEN-LAST:event_ModifiericonMouseClicked
+
+    private void RetouriconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RetouriconMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_RetouriconMouseClicked
 
     /**
      * @param args the command line arguments
@@ -173,11 +172,11 @@ public class AfficherUtilisateur extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btnsupprimer;
     private javax.swing.JTable ListeUtilisateur;
-    private javax.swing.JButton bntModifier;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel Modifiericon;
+    private javax.swing.JLabel Retouricon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel supprimericon;
     // End of variables declaration//GEN-END:variables
 }
