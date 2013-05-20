@@ -178,23 +178,31 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
 
     private void validericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validericonMouseClicked
         // TODO add your handling code here:
-         Utilisateur utilisateur = new Utilisateur(nom_Field.getText(), prenom_Field.getText(),Role_Field.getSelectedItem().toString(),login_Field.getText(),Password_Field.getText(),Email_Field.getText(),Tel_Field.getText());
+        if (nom_Field.getText().equals("")&& prenom_Field.getText().equals("")&& login_Field.getText().equals("")&& Password_Field.getText().equals("")&& Email_Field.getText().equals("")&& Tel_Field.getText().equals("")) {
+           JOptionPane.showMessageDialog(this, "Errure de saisir il faut Remplire le formulaire SVP !");
+             
+        }else{
+        Utilisateur utilisateur = new Utilisateur(nom_Field.getText(), prenom_Field.getText(),Role_Field.getSelectedItem().toString(),login_Field.getText(),Password_Field.getText(),Email_Field.getText(),Tel_Field.getText());
         UtilisateurDAO utilisateurDAO = new UtilisateurDAO();
         if(utilisateurDAO.addUtilisateur(utilisateur) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
             this.setVisible(false);
-        }
+        }}
     }//GEN-LAST:event_validericonMouseClicked
 
     private void ModifiericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModifiericonMouseClicked
         // TODO add your handling code here:
-        Utilisateur equipe = new Utilisateur(user.getId(), user.getNom(), user.getPrenom(), Role_Field.getSelectedItem().toString(), user.getMail(), user.getTel(), user.getUserName(), user.getPassword());
+        
+        if (nom_Field.getText().equals("")&& prenom_Field.getText().equals("")&& login_Field.getText().equals("")&& Password_Field.getText().equals("")&& Email_Field.getText().equals("")&& Tel_Field.getText().equals("")) {
+           JOptionPane.showMessageDialog(this, "Errure de saisir il faut Remplire le formulaire SVP !");
+             
+        }else{Utilisateur equipe = new Utilisateur(user.getId(), nom_Field.getText(), prenom_Field.getText(), Role_Field.getSelectedItem().toString(), Email_Field.getText(), Tel_Field.getText(), login_Field.getText(),Password_Field.getText());
         UtilisateurDAO employeDAO = new UtilisateurDAO();
         if(employeDAO.updateUtilisateur(equipe)){
             JOptionPane.showMessageDialog(this, "Modification effectué avec succès !");
             this.setVisible(false);
             new AfficherUtilisateur().setVisible(true);
-        }
+        }}
     }//GEN-LAST:event_ModifiericonMouseClicked
 
     /**

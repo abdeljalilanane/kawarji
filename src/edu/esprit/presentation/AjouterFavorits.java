@@ -108,6 +108,7 @@ public class AjouterFavorits extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(e.getId()==0)
             {
+                id_Utilisateur_Field.setEditable(false);
                 id_Utilisateur_Field.setText(Integer.toString(e.getId_User()));
             
             validericon.setVisible(true);
@@ -138,24 +139,32 @@ public class AjouterFavorits extends javax.swing.JFrame {
 
     private void validericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validericonMouseClicked
         // TODO add your handling code here:
+        if (id_Utilisateur_Field.getText().equals("")) {
+           JOptionPane.showMessageDialog(this, "Errure de saisir il faut Remplire le formulaire SVP !");
+             
+        }else{
         Favorits equipe = equipes.get(id_equipe.getSelectedIndex()); //Récuperer l'equipe séléctionnée à partir du ComboBox 
         Favorits favorits = new Favorits(Integer.parseInt(id_Utilisateur_Field.getText()), equipe.getId());
         FavoritsDAO favoritsDAO = new FavoritsDAO();
         if(favoritsDAO.addFavorits(favorits) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
             this.setVisible(false);
-        }
+        }}
     }//GEN-LAST:event_validericonMouseClicked
 
     private void ModifiericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModifiericonMouseClicked
         // TODO add your handling code here:
+        if (id_Utilisateur_Field.getText().equals("")) {
+           JOptionPane.showMessageDialog(this, "Errure de saisir il faut Remplire le formulaire SVP !");
+             
+        }else{
        Favorits equipe = new Favorits(e.getId(), e.getId_User(), e.getId_equipe());
         FavoritsDAO employeDAO = new FavoritsDAO();
         if(employeDAO.updateFavorits(equipe)){
             JOptionPane.showMessageDialog(this, "Modification effectué avec succès !");
             this.setVisible(false);
             new AfficherFavorits().setVisible(true);
-        }
+        }}
     }//GEN-LAST:event_ModifiericonMouseClicked
 
     /**

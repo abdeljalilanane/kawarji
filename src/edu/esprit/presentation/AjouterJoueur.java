@@ -165,23 +165,29 @@ static Joueur j=null;
 
     private void validericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validericonMouseClicked
         // TODO add your handling code here:
-        Equipe equipe = equipes.get(Equipe_box.getSelectedIndex()); //Récuperer l'equipe séléctionnée à partir du ComboBox 
+        if (nom_Field.getText().equals("")&& prenom_Field.getText().equals("")&& Saison_filed.getText().equals("")) {
+           JOptionPane.showMessageDialog(this, "Errure de saisir il faut Remplire le formulaire SVP !");
+             
+        }else{Equipe equipe = equipes.get(Equipe_box.getSelectedIndex()); //Récuperer l'equipe séléctionnée à partir du ComboBox 
         Joueur joueur = new Joueur(equipe.getId(), Num_box.getSelectedIndex(), nom_Field.getText(), prenom_Field.getText(), Saison_filed.getText());
         JoueurDAO employeDAO = new JoueurDAO();
         if(employeDAO.addJoueur(joueur) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
             this.setVisible(false);
-        }
+        }}
     }//GEN-LAST:event_validericonMouseClicked
 
     private void ModifiericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModifiericonMouseClicked
         // TODO add your handling code here:
-         Equipe equipe = equipes.get(Equipe_box.getSelectedIndex()); //Récuperer l'equipe séléctionnée à partir du ComboBox 
+        if (nom_Field.getText().equals("")&& prenom_Field.getText().equals("")&& Saison_filed.getText().equals("")) {
+           JOptionPane.showMessageDialog(this, "Errure de saisir il faut Remplire le formulaire SVP !");
+             
+        }else{Equipe equipe = equipes.get(Equipe_box.getSelectedIndex()); //Récuperer l'equipe séléctionnée à partir du ComboBox 
         Joueur joueur = new Joueur(j.getId(),equipe.getId(), Num_box.getSelectedIndex(), nom_Field.getText(), prenom_Field.getText(), Saison_filed.getText());
         JoueurDAO employeDAO = new JoueurDAO();
         if(employeDAO.updateJoueur(joueur)){
             JOptionPane.showMessageDialog(this, "Modifier effectué avec succès !");
-        }
+        }}
     }//GEN-LAST:event_ModifiericonMouseClicked
 
     /**

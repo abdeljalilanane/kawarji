@@ -12,6 +12,7 @@ import edu.esprit.entite.But;
 import edu.esprit.entite.Equipe;
 import edu.esprit.entite.Joueur;
 import edu.esprit.entite.Match;
+import static java.awt.image.ImageObserver.WIDTH;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
@@ -30,6 +31,8 @@ public class AjouterResultat extends javax.swing.JFrame {
     ArrayList<Equipe> equipes = equipeDAO.readAllEquipes();
     JoueurDAO joueurDAO = new JoueurDAO();
     ArrayList<Joueur> joueur = joueurDAO.readAllJoueurs();
+    
+    
     public AjouterResultat() {
         initComponents();
       
@@ -75,7 +78,6 @@ public class AjouterResultat extends javax.swing.JFrame {
         Jouer_id9 = new javax.swing.JComboBox();
         R1 = new javax.swing.JSpinner();
         R2 = new javax.swing.JSpinner();
-        jSpinner1 = new javax.swing.JSpinner();
         Retouricon1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -100,8 +102,13 @@ public class AjouterResultat extends javax.swing.JFrame {
         validericon.setBounds(630, 90, 160, 50);
 
         Equipe1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Equipe ::." }));
+        Equipe1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Equipe1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(Equipe1);
-        Equipe1.setBounds(480, 60, 149, 20);
+        Equipe1.setBounds(480, 60, 149, 30);
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Equipe 1");
@@ -109,8 +116,13 @@ public class AjouterResultat extends javax.swing.JFrame {
         jLabel1.setBounds(381, 60, 70, 14);
 
         Equipe2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Equipe ::." }));
+        Equipe2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Equipe2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(Equipe2);
-        Equipe2.setBounds(800, 60, 149, 20);
+        Equipe2.setBounds(800, 60, 149, 30);
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Equipe 2");
@@ -120,12 +132,12 @@ public class AjouterResultat extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Joueur");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(460, 240, 60, 14);
+        jLabel3.setBounds(460, 200, 60, 14);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Temp but");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(640, 240, 70, 14);
+        jLabel4.setBounds(640, 200, 70, 14);
 
         Tem_but.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -138,11 +150,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but);
-        Tem_but.setBounds(620, 270, 81, 20);
+        Tem_but.setBounds(620, 240, 81, 30);
 
         Jouer_id.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id);
-        Jouer_id.setBounds(420, 270, 144, 20);
+        Jouer_id.setBounds(420, 250, 144, 20);
 
         Tem_but1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -150,11 +162,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but1);
-        Tem_but1.setBounds(620, 300, 81, 20);
+        Tem_but1.setBounds(620, 290, 81, 30);
 
         Jouer_id1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id1);
-        Jouer_id1.setBounds(420, 300, 144, 20);
+        Jouer_id1.setBounds(420, 290, 144, 20);
 
         Tem_but2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -162,11 +174,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but2);
-        Tem_but2.setBounds(620, 330, 81, 20);
+        Tem_but2.setBounds(620, 330, 81, 30);
 
         Jouer_id2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id2);
-        Jouer_id2.setBounds(420, 330, 144, 20);
+        Jouer_id2.setBounds(420, 340, 144, 20);
 
         Tem_but3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -174,11 +186,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but3);
-        Tem_but3.setBounds(620, 360, 81, 20);
+        Tem_but3.setBounds(620, 370, 81, 30);
 
         Jouer_id3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id3);
-        Jouer_id3.setBounds(420, 360, 144, 20);
+        Jouer_id3.setBounds(420, 380, 144, 20);
 
         Tem_but4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -186,11 +198,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but4);
-        Tem_but4.setBounds(620, 390, 81, 20);
+        Tem_but4.setBounds(620, 410, 81, 30);
 
         Jouer_id4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id4);
-        Jouer_id4.setBounds(420, 390, 144, 20);
+        Jouer_id4.setBounds(420, 420, 144, 20);
 
         Tem_but5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -198,16 +210,16 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but5);
-        Tem_but5.setBounds(920, 270, 81, 20);
+        Tem_but5.setBounds(920, 230, 81, 30);
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Joueur");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(770, 240, 50, 14);
+        jLabel5.setBounds(770, 200, 50, 14);
 
         Jouer_id5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id5);
-        Jouer_id5.setBounds(730, 270, 144, 20);
+        Jouer_id5.setBounds(730, 240, 144, 20);
 
         Tem_but6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -215,11 +227,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but6);
-        Tem_but6.setBounds(920, 300, 81, 20);
+        Tem_but6.setBounds(920, 280, 81, 30);
 
         Jouer_id6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id6);
-        Jouer_id6.setBounds(730, 300, 144, 20);
+        Jouer_id6.setBounds(730, 290, 144, 20);
 
         Tem_but7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -227,11 +239,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but7);
-        Tem_but7.setBounds(920, 330, 81, 20);
+        Tem_but7.setBounds(920, 330, 81, 30);
 
         Jouer_id7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id7);
-        Jouer_id7.setBounds(730, 330, 144, 20);
+        Jouer_id7.setBounds(730, 340, 144, 20);
 
         Tem_but8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -244,11 +256,16 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but8);
-        Tem_but8.setBounds(920, 360, 81, 20);
+        Tem_but8.setBounds(920, 370, 81, 30);
 
         Jouer_id8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
+        Jouer_id8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Jouer_id8ActionPerformed(evt);
+            }
+        });
         getContentPane().add(Jouer_id8);
-        Jouer_id8.setBounds(730, 360, 144, 20);
+        Jouer_id8.setBounds(730, 380, 144, 20);
 
         Tem_but9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -256,11 +273,11 @@ public class AjouterResultat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Tem_but9);
-        Tem_but9.setBounds(920, 390, 81, 20);
+        Tem_but9.setBounds(920, 410, 81, 30);
 
         Jouer_id9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { ".:: Selectionner Jouer ::." }));
         getContentPane().add(Jouer_id9);
-        Jouer_id9.setBounds(730, 390, 144, 20);
+        Jouer_id9.setBounds(730, 420, 144, 20);
 
         R1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -287,19 +304,6 @@ public class AjouterResultat extends javax.swing.JFrame {
         getContentPane().add(R2);
         R2.setBounds(719, 60, 50, 30);
 
-        jSpinner1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jSpinner1MouseClicked(evt);
-            }
-        });
-        jSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jSpinner1StateChanged(evt);
-            }
-        });
-        getContentPane().add(jSpinner1);
-        jSpinner1.setBounds(889, 190, 50, 20);
-
         Retouricon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/precident.png"))); // NOI18N
         Retouricon1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -312,7 +316,7 @@ public class AjouterResultat extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Temp but");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(930, 240, 60, 14);
+        jLabel6.setBounds(930, 200, 60, 14);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ajouterresultat.png"))); // NOI18N
         getContentPane().add(jLabel7);
@@ -507,10 +511,9 @@ public class AjouterResultat extends javax.swing.JFrame {
         But but=new But(1, joueurs2.getId(), Tem_but9.getText());
         ButDAO butdao=new ButDAO();
         if(butdao.addBut(but) != 0){
-            JOptionPane.showMessageDialog(this, "Ajout effectué avec succès joueur!");
+            Tem_but9.setVisible(false);
+        Jouer_id9.setVisible(false);  }
         }
-        Tem_but9.setVisible(false);
-        Jouer_id9.setVisible(false);}
     }//GEN-LAST:event_Tem_but9MouseExited
 
     private void validericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validericonMouseClicked
@@ -740,22 +743,51 @@ public class AjouterResultat extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_Retouricon1MouseClicked
 
-    private void jSpinner1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSpinner1MouseClicked
+    private void Jouer_id8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jouer_id8ActionPerformed
         // TODO add your handling code here:
-       
-    }//GEN-LAST:event_jSpinner1MouseClicked
+    }//GEN-LAST:event_Jouer_id8ActionPerformed
 
-    private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
+    private void Equipe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Equipe1ActionPerformed
         // TODO add your handling code here:
-         int nb=0;
+        Equipe equipe = equipeDAO.readEquipeNom(Equipe1.getSelectedItem().toString()); 
+        ArrayList<Joueur> joueur1 = joueurDAO.readAllJoueursParEquipe(equipe.getId());
+        Jouer_id.removeAllItems();
+        Jouer_id1.removeAllItems();
+        Jouer_id2.removeAllItems();
+        Jouer_id3.removeAllItems();
+        Jouer_id4.removeAllItems();
         
-       
-        nb=Integer.parseInt(jSpinner1.getValue().toString());
+        for (int i = 0; i < joueur1.size(); i++) {
+            Jouer_id.addItem(joueur1.get(i).getNom());
+            Jouer_id1.addItem(joueur1.get(i).getNom());
+            Jouer_id2.addItem(joueur1.get(i).getNom());
+            Jouer_id3.addItem(joueur1.get(i).getNom());
+            Jouer_id4.addItem(joueur1.get(i).getNom());
+            
+            
+        }
+    }//GEN-LAST:event_Equipe1ActionPerformed
+
+    private void Equipe2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Equipe2ActionPerformed
+        // TODO add your handling code here:
+         Equipe equipe = equipeDAO.readEquipeNom(Equipe1.getSelectedItem().toString()); 
+        ArrayList<Joueur> joueur1 = joueurDAO.readAllJoueursParEquipe(equipe.getId());
+        Jouer_id5.removeAllItems();
+        Jouer_id6.removeAllItems();
+        Jouer_id7.removeAllItems();
+        Jouer_id8.removeAllItems();
+        Jouer_id9.removeAllItems();
         
-        System.out.println(nb);
-        
-        
-    }//GEN-LAST:event_jSpinner1StateChanged
+        for (int i = 0; i < joueur1.size(); i++) {
+            Jouer_id5.addItem(joueur.get(i).getNom());
+            Jouer_id6.addItem(joueur.get(i).getNom());
+            Jouer_id7.addItem(joueur.get(i).getNom());
+            Jouer_id8.addItem(joueur.get(i).getNom());
+            Jouer_id9.addItem(joueur.get(i).getNom());
+            
+            
+        }
+    }//GEN-LAST:event_Equipe2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -806,7 +838,6 @@ public class AjouterResultat extends javax.swing.JFrame {
     private javax.swing.JComboBox Jouer_id9;
     private javax.swing.JSpinner R1;
     private javax.swing.JSpinner R2;
-    private javax.swing.JLabel Retouricon;
     private javax.swing.JLabel Retouricon1;
     private javax.swing.JTextField Tem_but;
     private javax.swing.JTextField Tem_but1;
@@ -826,7 +857,6 @@ public class AjouterResultat extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JLabel validericon;
     // End of variables declaration//GEN-END:variables
 }

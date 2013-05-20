@@ -123,23 +123,31 @@ static Equipe e=null;
 
     private void ModifiericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModifiericonMouseClicked
         // TODO add your handling code here:
+         if (nom_Field.getText().equals("")&& entraineur_Field.getText().equals("")&&Flux_text.getText().equals("")) {
+           JOptionPane.showMessageDialog(this, "Errure de saisir il faut Remplire le formulaire SVP !");
+             
+        }else{
         Equipe equipe = new Equipe(e.getId(),nom_Field.getText(), entraineur_Field.getText(),Flux_text.getText());
         EquipeDAO employeDAO = new EquipeDAO();
         if(employeDAO.updateEquipe(equipe)){
             JOptionPane.showMessageDialog(this, "Modification effectué avec succès !");
             this.setVisible(false);
             new AfficherEquipe().setVisible(true);
-        }
+        }}
     }//GEN-LAST:event_ModifiericonMouseClicked
 
     private void validericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validericonMouseClicked
         // TODO add your handling code here:
+        if (nom_Field.getText().equals("")&& entraineur_Field.getText().equals("")&&Flux_text.getText().equals("")) {
+           JOptionPane.showMessageDialog(this, "Errure de saisir il faut Remplire le formulaire SVP !");
+             
+        }else{
         Equipe equipe = new Equipe(nom_Field.getText(), entraineur_Field.getText(),Flux_text.getText());
         EquipeDAO employeDAO = new EquipeDAO();
         if(employeDAO.addEquipe(equipe) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
             this.setVisible(false);
-        }
+        }}
     }//GEN-LAST:event_validericonMouseClicked
 
     /**
