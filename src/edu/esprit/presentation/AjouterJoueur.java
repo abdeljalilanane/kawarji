@@ -53,14 +53,13 @@ static Joueur j=null;
         prenom_Field = new javax.swing.JTextField();
         Equipe_box = new javax.swing.JComboBox();
         valider_button = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         Num_box = new javax.swing.JComboBox();
         Saison_filed = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        img = new javax.swing.JButton();
         btnModifier = new javax.swing.JButton();
+        validericon = new javax.swing.JLabel();
+        Modifiericon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -107,16 +106,6 @@ static Joueur j=null;
         getContentPane().add(valider_button);
         valider_button.setBounds(253, 371, 65, 23);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(10, 371, 121, 37);
-
         jLabel5.setText("Numero :");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(58, 144, 44, 14);
@@ -131,19 +120,6 @@ static Joueur j=null;
         getContentPane().add(jLabel6);
         jLabel6.setBounds(64, 201, 38, 14);
 
-        jLabel7.setText("image : ");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(64, 240, 38, 14);
-
-        img.setText("Choisir");
-        img.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                imgActionPerformed(evt);
-            }
-        });
-        getContentPane().add(img);
-        img.setBounds(112, 236, 206, 23);
-
         btnModifier.setText("Modifier");
         btnModifier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,14 +129,27 @@ static Joueur j=null;
         getContentPane().add(btnModifier);
         btnModifier.setBounds(176, 371, 71, 23);
 
+        validericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/valider.png"))); // NOI18N
+        validericon.setText("jLabel11");
+        validericon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                validericonMouseClicked(evt);
+            }
+        });
+        getContentPane().add(validericon);
+        validericon.setBounds(530, 410, 160, 50);
+
+        Modifiericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/modifier.png"))); // NOI18N
+        Modifiericon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ModifiericonMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Modifiericon);
+        Modifiericon.setBounds(560, 410, 160, 50);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        new DashboardAdmin().setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
@@ -197,27 +186,6 @@ static Joueur j=null;
         }
     }//GEN-LAST:event_valider_buttonActionPerformed
 
-    private void imgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imgActionPerformed
-        
-        
-                if (evt.getSource() == img) {
-            int returnVal = fc.showOpenDialog(AjouterJoueur.this);
- 
-            if (returnVal == JFileChooser.APPROVE_OPTION) {
-                File file = fc.getSelectedFile();
-                //This is where a real application would open the file.
-                //log.append("Opening: " + file.getName() + "." + newline);
-            } else {
-                //log.append("Open command cancelled by user." + newline);
-            }
-            //log.setCaretPosition(log.getDocument().getLength());
- 
-        //Handle save button action.
-        }
-        
-        
-    }//GEN-LAST:event_imgActionPerformed
-
     private void btnModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierActionPerformed
         // TODO add your handling code here:
         Equipe equipe = equipes.get(Equipe_box.getSelectedIndex()); //Récuperer l'equipe séléctionnée à partir du ComboBox 
@@ -227,6 +195,26 @@ static Joueur j=null;
             JOptionPane.showMessageDialog(this, "Modifier effectué avec succès !");
         }
     }//GEN-LAST:event_btnModifierActionPerformed
+
+    private void validericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validericonMouseClicked
+        // TODO add your handling code here:
+        Utilisateur utilisateur = new Utilisateur(nom_Field.getText(), prenom_Field.getText(),Role_Field.getSelectedItem().toString(),login_Field.getText(),Password_Field.getText(),Email_Field.getText(),Tel_Field.getText());
+        UtilisateurDAO utilisateurDAO = new UtilisateurDAO();
+        if(utilisateurDAO.addUtilisateur(utilisateur) != 0){
+            JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
+        }
+    }//GEN-LAST:event_validericonMouseClicked
+
+    private void ModifiericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModifiericonMouseClicked
+        // TODO add your handling code here:
+        Utilisateur equipe = new Utilisateur(user.getId(), user.getNom(), user.getPrenom(), Role_Field.getSelectedItem().toString(), user.getMail(), user.getTel(), user.getUserName(), user.getPassword());
+        UtilisateurDAO employeDAO = new UtilisateurDAO();
+        if(employeDAO.updateUtilisateur(equipe)){
+            JOptionPane.showMessageDialog(this, "Modification effectué avec succès !");
+            this.setVisible(false);
+            new AfficherUtilisateur().setVisible(true);
+        }
+    }//GEN-LAST:event_ModifiericonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -264,20 +252,19 @@ static Joueur j=null;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox Equipe_box;
+    private javax.swing.JLabel Modifiericon;
     private javax.swing.JComboBox Num_box;
     private javax.swing.JTextField Saison_filed;
     private javax.swing.JButton btnModifier;
-    private javax.swing.JButton img;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField nom_Field;
     private javax.swing.JTextField prenom_Field;
     private javax.swing.JButton valider_button;
+    private javax.swing.JLabel validericon;
     // End of variables declaration//GEN-END:variables
 }

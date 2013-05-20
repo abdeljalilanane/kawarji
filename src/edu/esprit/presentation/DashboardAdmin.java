@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package edu.esprit.presentation;
+import edu.esprit.presentation.AfficherEquipe;
 
 /**
  *
@@ -26,156 +27,144 @@ public class DashboardAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        utilisqteur = new javax.swing.JLabel();
+        AffiEquip = new javax.swing.JLabel();
+        AffichFavorit = new javax.swing.JLabel();
+        listeJoueur = new javax.swing.JLabel();
+        addequip = new javax.swing.JLabel();
+        addfavorit = new javax.swing.JLabel();
+        addjoueur = new javax.swing.JLabel();
+        adduser = new javax.swing.JLabel();
+        addmatch = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1366, 700));
         getContentPane().setLayout(null);
 
-        jButton1.setText("Affichier E");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        utilisqteur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/UTILISATEUR.png"))); // NOI18N
+        utilisqteur.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                utilisqteurMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(45, 38, 81, 23);
+        getContentPane().add(utilisqteur);
+        utilisqteur.setBounds(380, 390, 180, 45);
 
-        jButton2.setText("Affichier F");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        AffiEquip.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/LISTEEQUIPE.png"))); // NOI18N
+        AffiEquip.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AffiEquipMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(45, 79, 81, 23);
+        getContentPane().add(AffiEquip);
+        AffiEquip.setBounds(380, 180, 158, 50);
 
-        jButton3.setText("Affichier J");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        AffichFavorit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/LISTEFAVORIT.png"))); // NOI18N
+        AffichFavorit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AffichFavoritMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(45, 113, 81, 23);
+        getContentPane().add(AffichFavorit);
+        AffichFavorit.setBounds(380, 250, 170, 45);
 
-        jButton4.setText("Affichier U");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+        listeJoueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/LISTEJOUEURS.png"))); // NOI18N
+        listeJoueur.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listeJoueurMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(45, 154, 83, 23);
+        getContentPane().add(listeJoueur);
+        listeJoueur.setBounds(380, 320, 170, 50);
 
-        jButton5.setText("Ajouter E");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+        addequip.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/ADDEQUIP.png"))); // NOI18N
+        addequip.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addequipMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(209, 38, 77, 23);
+        getContentPane().add(addequip);
+        addequip.setBounds(820, 180, 158, 50);
 
-        jButton6.setText("Ajouter F");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+        addfavorit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/ADDFAVORIT.png"))); // NOI18N
+        addfavorit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addfavoritMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton6);
-        jButton6.setBounds(209, 79, 77, 23);
+        getContentPane().add(addfavorit);
+        addfavorit.setBounds(820, 250, 170, 44);
 
-        jButton7.setText("Ajouter J");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+        addjoueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/ADDJOUEUR.png"))); // NOI18N
+        addjoueur.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addjoueurMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton7);
-        jButton7.setBounds(209, 113, 77, 23);
+        getContentPane().add(addjoueur);
+        addjoueur.setBounds(820, 320, 170, 50);
 
-        jButton8.setText("Ajouter U");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+        adduser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/ADDUSER.png"))); // NOI18N
+        adduser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adduserMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton8);
-        jButton8.setBounds(207, 154, 79, 23);
+        getContentPane().add(adduser);
+        adduser.setBounds(820, 400, 180, 45);
 
-        jButton9.setText("Ajouter Resultat Match");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton9);
-        jButton9.setBounds(428, 38, 143, 23);
+        addmatch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/ADDMATCH.png"))); // NOI18N
+        addmatch.setText("jLabel3");
+        getContentPane().add(addmatch);
+        addmatch.setBounds(600, 460, 160, 60);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/ADMIN.png"))); // NOI18N
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, 0, 1350, 690);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void AffiEquipMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AffiEquipMouseClicked
         // TODO add your handling code here:
-        this.setVisible(false);
-        new AfficherEquipe().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+      new AfficherEquipe().setVisible(true);
+    }//GEN-LAST:event_AffiEquipMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void AffichFavoritMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AffichFavoritMouseClicked
         // TODO add your handling code here:
-         this.setVisible(false);
         new AfficherFavorits().setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_AffichFavoritMouseClicked
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void listeJoueurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listeJoueurMouseClicked
         // TODO add your handling code here:
-         this.setVisible(false);
         new AfficherJoueur().setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_listeJoueurMouseClicked
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void utilisqteurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_utilisqteurMouseClicked
         // TODO add your handling code here:
-         this.setVisible(false);
-        new AfficherJoueur().setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+        new AfficherUtilisateur().setVisible(true);
+    }//GEN-LAST:event_utilisqteurMouseClicked
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void addequipMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addequipMouseClicked
         // TODO add your handling code here:
-         this.setVisible(false);
         new AjouterEquipe().setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_addequipMouseClicked
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void addfavoritMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addfavoritMouseClicked
         // TODO add your handling code here:
-        this.setVisible(false);
-        new AjouterFavorits().setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+         new AjouterFavorits().setVisible(true);
+    }//GEN-LAST:event_addfavoritMouseClicked
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void addjoueurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addjoueurMouseClicked
         // TODO add your handling code here:
-        this.setVisible(false);
-        new AjouterJoueur().setVisible(true);
-    }//GEN-LAST:event_jButton7ActionPerformed
+         new AjouterJoueur().setVisible(true);
+    }//GEN-LAST:event_addjoueurMouseClicked
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void adduserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adduserMouseClicked
         // TODO add your handling code here:
-        this.setVisible(false);
-        new AjouterUtilisateur().setVisible(true);
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        new AjouterResultat().setVisible(true);
-    }//GEN-LAST:event_jButton9ActionPerformed
+         new AjouterUtilisateur().setVisible(true);
+    }//GEN-LAST:event_adduserMouseClicked
 
     /**
      * @param args the command line arguments
@@ -212,14 +201,15 @@ public class DashboardAdmin extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JLabel AffiEquip;
+    private javax.swing.JLabel AffichFavorit;
+    private javax.swing.JLabel addequip;
+    private javax.swing.JLabel addfavorit;
+    private javax.swing.JLabel addjoueur;
+    private javax.swing.JLabel addmatch;
+    private javax.swing.JLabel adduser;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel listeJoueur;
+    private javax.swing.JLabel utilisqteur;
     // End of variables declaration//GEN-END:variables
 }

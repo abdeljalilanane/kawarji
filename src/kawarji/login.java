@@ -26,7 +26,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.parser.ParserDelegator;
-import kawarji.SingUp;
+
 
 /**
  *
@@ -34,8 +34,8 @@ import kawarji.SingUp;
  */
 public class login extends javax.swing.JFrame {
     
-    public static String API_KEY = "265051030176477";
-public static String SECRET = "b1a545527a0e2a5f95879b9c741667f2";
+    public static String API_KEY = "135131190015488";
+public static String SECRET = "6d696c0469c96caec075b1c76eb7e406";
 public static String nom="";
 public static String firstRequest = "https://graph.facebook.com/oauth/authorize?"
 + "client_id="

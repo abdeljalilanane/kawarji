@@ -144,7 +144,7 @@ public class AjouterUtilisateur extends javax.swing.JFrame {
             }
         });
         getContentPane().add(validericon);
-        validericon.setBounds(560, 410, 160, 50);
+        validericon.setBounds(530, 410, 160, 50);
 
         Retouricon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/precident.png"))); // NOI18N
         Retouricon.addMouseListener(new java.awt.event.MouseAdapter() {

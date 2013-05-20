@@ -40,14 +40,13 @@ public class AjouterFavorits extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         id_Utilisateur_Field = new javax.swing.JTextField();
         id_equipe = new javax.swing.JComboBox();
-        valider_button = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        btnModifier = new javax.swing.JButton();
+        validericon = new javax.swing.JLabel();
+        Modifiericon = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -57,19 +56,17 @@ public class AjouterFavorits extends javax.swing.JFrame {
         });
         getContentPane().setLayout(null);
 
-        jLabel1.setText("Ajouter Favorite :");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 20, 86, 14);
-
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Id uilisateur:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(36, 64, 60, 14);
+        jLabel2.setBounds(490, 180, 60, 14);
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Equipe :");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(57, 102, 39, 14);
+        jLabel4.setBounds(510, 220, 39, 14);
         getContentPane().add(id_Utilisateur_Field);
-        id_Utilisateur_Field.setBounds(106, 61, 206, 20);
+        id_Utilisateur_Field.setBounds(560, 170, 190, 30);
 
         id_equipe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,45 +74,33 @@ public class AjouterFavorits extends javax.swing.JFrame {
             }
         });
         getContentPane().add(id_equipe);
-        id_equipe.setBounds(106, 99, 206, 20);
+        id_equipe.setBounds(560, 220, 190, 30);
 
-        valider_button.setText("Valider");
-        valider_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                valider_buttonActionPerformed(evt);
+        validericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/valider.png"))); // NOI18N
+        validericon.setText("jLabel11");
+        validericon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                validericonMouseClicked(evt);
             }
         });
-        getContentPane().add(valider_button);
-        valider_button.setBounds(247, 227, 65, 23);
+        getContentPane().add(validericon);
+        validericon.setBounds(560, 410, 160, 50);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Retour.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        Modifiericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nav/modifier.png"))); // NOI18N
+        Modifiericon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ModifiericonMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(10, 268, 121, 37);
+        getContentPane().add(Modifiericon);
+        Modifiericon.setBounds(560, 410, 160, 50);
 
-        btnModifier.setText("Modifier");
-        btnModifier.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModifierActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnModifier);
-        btnModifier.setBounds(166, 227, 71, 23);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/AJOUTERFAVORIT.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1370, 700);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-       this.setVisible(false);
-       
-        new DashboardAdmin().setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
@@ -149,7 +134,7 @@ public class AjouterFavorits extends javax.swing.JFrame {
         
     }//GEN-LAST:event_id_equipeActionPerformed
 
-    private void valider_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valider_buttonActionPerformed
+    private void validericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validericonMouseClicked
         // TODO add your handling code here:
         Favorits equipe = equipes.get(id_equipe.getSelectedIndex()); //Récuperer l'equipe séléctionnée à partir du ComboBox 
         Favorits favorits = new Favorits(Integer.parseInt(id_Utilisateur_Field.getText()), equipe.getId());
@@ -157,18 +142,18 @@ public class AjouterFavorits extends javax.swing.JFrame {
         if(favoritsDAO.addFavorits(favorits) != 0){
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succès !");
         }
-    }//GEN-LAST:event_valider_buttonActionPerformed
+    }//GEN-LAST:event_validericonMouseClicked
 
-    private void btnModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierActionPerformed
+    private void ModifiericonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModifiericonMouseClicked
         // TODO add your handling code here:
-        Favorits equipe = new Favorits(e.getId(), e.getId_User(), e.getId_equipe());
+       Favorits equipe = new Favorits(e.getId(), e.getId_User(), e.getId_equipe());
         FavoritsDAO employeDAO = new FavoritsDAO();
         if(employeDAO.updateFavorits(equipe)){
             JOptionPane.showMessageDialog(this, "Modification effectué avec succès !");
             this.setVisible(false);
             new AfficherFavorits().setVisible(true);
         }
-    }//GEN-LAST:event_btnModifierActionPerformed
+    }//GEN-LAST:event_ModifiericonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -205,13 +190,12 @@ public class AjouterFavorits extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnModifier;
+    private javax.swing.JLabel Modifiericon;
     private javax.swing.JTextField id_Utilisateur_Field;
     private javax.swing.JComboBox id_equipe;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JButton valider_button;
+    private javax.swing.JLabel validericon;
     // End of variables declaration//GEN-END:variables
 }
